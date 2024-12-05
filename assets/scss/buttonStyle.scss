@@ -1,0 +1,44 @@
+@import "colors";
+$colorMode: "dark", "light";
+$variants: "solid", "soft", "link";
+
+// create button style
+
+@each $variant in $variants {
+  @each $colorName, $values in $colors {
+    .btn-#{$colorName}-#{$variant} {
+      @if $variant == "solid" {
+        color: map-get($map: $values, $key: "400");
+        background-color: map-get($map: $values, $key: "200");
+        &:hover {
+          background-color: adjust-color(
+            $color: map-get($map: $values, $key: "200"),
+            $hue: 10%
+          );
+        }
+      } @else if $variant == "link" {
+        color: map-get($map: $values, $key: "400");
+      }
+    }
+
+    @if $variant == "soft" {
+      .btn-#{$colorName}-#{$variant} {
+        &:hover {
+          .btn-#{$colorName}-#{$variant}-icon {
+            background-color: adjust-color(
+              $color: map-get($map: $values, $key: "200"),
+              $hue: 10%
+            );
+          }
+        }
+      }
+      .btn-#{$colorName}-#{$variant}-icon {
+        color: map-get($map: $values, $key: "400");
+        background-color: map-get($map: $values, $key: "200");
+      }
+      .btn-#{$colorName}-#{$variant}-label {
+        color: map-get($map: $values, $key: "400");
+      }
+    }
+  }
+}

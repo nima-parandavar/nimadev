@@ -1,0 +1,24 @@
+@import "colors";
+@import "buttonStyle";
+
+:root {
+  font-family: "Quicksand", "Roboto Flex", sans-serif;
+}
+
+.dark-mode {
+  color: $white;
+  background-color: $black;
+}
+
+.light-mode {
+  color: $black;
+  background-color: $white;
+}
+
+.to-center {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  gap: 0.25rem;
+}
