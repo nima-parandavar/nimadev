@@ -9,7 +9,7 @@ export const useThemeStore = defineStore({
   actions: {
     setDefaultThem() {
       if (!this.theme) {
-        this.theme = 'blue'
+        this.theme = 'red'
       }
     }
   },

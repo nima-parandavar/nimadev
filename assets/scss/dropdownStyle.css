@@ -1,0 +1,143 @@
+.dropdown-content-red-dark {
+  background-color: #22252a;
+}
+
+.dropdown-item-red {
+  color: #d14d72;
+  background-color: transparent;
+}
+.dropdown-item-red:hover {
+  background-color: #fcc8d1;
+}
+
+.dropdown-content-blue-dark {
+  background-color: #22252a;
+}
+
+.dropdown-item-blue {
+  color: #008dda;
+  background-color: transparent;
+}
+.dropdown-item-blue:hover {
+  background-color: #ace2e1;
+}
+
+.dropdown-content-purple-dark {
+  background-color: #22252a;
+}
+
+.dropdown-item-purple {
+  color: #86469c;
+  background-color: transparent;
+}
+.dropdown-item-purple:hover {
+  background-color: #fb9ad1;
+}
+
+.dropdown-content-green-dark {
+  background-color: #22252a;
+}
+
+.dropdown-item-green {
+  color: #55ad9b;
+  background-color: transparent;
+}
+.dropdown-item-green:hover {
+  background-color: #d8efd3;
+}
+
+.dropdown-content-cream-dark {
+  background-color: #22252a;
+}
+
+.dropdown-item-cream {
+  color: #ffbe98;
+  background-color: transparent;
+}
+.dropdown-item-cream:hover {
+  background-color: #f7ded0;
+}
+
+.dropdown-content-yellow-dark {
+  background-color: #22252a;
+}
+
+.dropdown-item-yellow {
+  color: #ff7d29;
+  background-color: transparent;
+}
+.dropdown-item-yellow:hover {
+  background-color: #ffeea9;
+}
+
+.dropdown-content-red-light {
+  background-color: #fef2f4;
+}
+
+.dropdown-item-red {
+  color: #d14d72;
+  background-color: transparent;
+}
+.dropdown-item-red:hover {
+  background-color: #fcc8d1;
+}
+
+.dropdown-content-blue-light {
+  background-color: #f7eedd;
+}
+
+.dropdown-item-blue {
+  color: #008dda;
+  background-color: transparent;
+}
+.dropdown-item-blue:hover {
+  background-color: #ace2e1;
+}
+
+.dropdown-content-purple-light {
+  background-color: #ffebff;
+}
+
+.dropdown-item-purple {
+  color: #86469c;
+  background-color: transparent;
+}
+.dropdown-item-purple:hover {
+  background-color: #fb9ad1;
+}
+
+.dropdown-content-green-light {
+  background-color: #f1f8f4;
+}
+
+.dropdown-item-green {
+  color: #55ad9b;
+  background-color: transparent;
+}
+.dropdown-item-green:hover {
+  background-color: #d8efd3;
+}
+
+.dropdown-content-cream-light {
+  background-color: #feece2;
+}
+
+.dropdown-item-cream {
+  color: #ffbe98;
+  background-color: transparent;
+}
+.dropdown-item-cream:hover {
+  background-color: #f7ded0;
+}
+
+.dropdown-content-yellow-light {
+  background-color: #feffe1;
+}
+
+.dropdown-item-yellow {
+  color: #ff7d29;
+  background-color: transparent;
+}
+.dropdown-item-yellow:hover {
+  background-color: #ffeea9;
+}/*# sourceMappingURL=dropdownStyle.css.map */

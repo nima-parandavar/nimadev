@@ -1,0 +1,17 @@
+@import "colors";
+@import "base";
+
+@each $variant in $variants {
+  @each $colorName, $values in $colors {
+    .badge-#{$colorName}-#{$variant} {
+      color: map-get($map: $values, $key: "400");
+      @if $variant == "solid" {
+        background-color: map-get($map: $values, $key: "200");
+      } @else if $variant == "link" {
+        background-color: transparent;
+      } @else if $variant == "soft" {
+        background-color: map-get($map: $values, $key: "100");
+      }
+    }
+  }
+}

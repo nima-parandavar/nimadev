@@ -1,7 +1,5 @@
 @import "colors";
-$colorMode: "dark", "light";
-$variants: "solid", "soft", "link";
-
+@import "base";
 // create button style
 
 @each $variant in $variants {

@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     '@nuxtjs/html-validator',
     'radix-vue/nuxt',
     '@vueuse/nuxt',
+    '@nuxt/image'
   ],
   // fonts
   fonts: {
@@ -25,7 +26,10 @@ export default defineNuxtConfig({
   },
   // css
   css: [
-    '~/assets/scss/style.css'
+    '~/assets/scss/style.css',
+    '~/assets/scss/buttonStyle.css',
+    '~/assets/scss/dropdownStyle.css',
+    '~/assets/scss/badgeStyle.css',
   ],
   // i18n
   // plugins
