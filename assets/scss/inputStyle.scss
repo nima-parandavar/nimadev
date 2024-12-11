@@ -1,0 +1,29 @@
+@import "colors";
+@import "base";
+
+@each $colorName, $values in $colors {
+  .input-#{$colorName} {
+    background-color: $white;
+    border: map-get($map: $values, $key: "300") solid 1px;
+    color: $black;
+    &:focus {
+      outline: none;
+      border: adjust-color($color: map-get($map: $values, $key: "300"))
+        solid
+        1px;
+      &::placeholder {
+        color: adjust-color($color: map-get($map: $values, $key: "300"));
+        opacity: 0.5;
+      }
+    }
+    &::placeholder {
+      color: adjust-color($color: map-get($map: $values, $key: "300"));
+      opacity: 0.6;
+    }
+  }
+
+  .input-#{$colorName}-icon {
+    // background-color: map-get($map: $values, $key: "100");
+    color: map-get($map: $values, $key: "300");
+  }
+}

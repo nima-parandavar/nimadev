@@ -1,13 +1,37 @@
 <script setup lang="ts">
+import * as Yup from 'yup'
 
+const formSchema = reactive({
+  fields: [
+    {
+      label: 'Email',
+      as: 'email',
+      description: 'Enter your email address',
+      required: true,
+      rule: Yup.string().email().label("Your Email address").required(),
+      name: 'email'
+    },
+    {
+      label: 'Password',
+      as: 'password',
+      description: 'Enter your password',
+      required: true,
+      rule: Yup.string().min(8).required(),
+      name: 'password',
+      icon: 'i-lucide-lock'
+    }
+  ]
+})
 </script>
 
 <template>
   <div class="m-20">
-    <MinDropdown
-      :items="[[{ key: 1, label: 'Account', to: '/', icon: 'i-lucide-airplay', badge: 'test', slot: 'account', avatar: { label: 'Nima Parse', src: 'https://randomuser.me/api/portraits/men/43.jpg' } }, { key: 2, label: 'admin page', click: () => { console.log('TEST') }, badge: 10 }]]">
-      <MinButton icon="i-lucide-airplay" variant="soft" disabled="true" label="dropdown" />
-    </MinDropdown>
-
+    <Form>
+      <MinFormGroup v-for="field in formSchema.fields" :name="field.name" :description="field.description"
+        :label="field.label" :required="field.required" class="mb-5">
+        <MinInput :type="field.as" :name="field.name" :required="field.required" :icon="field.icon"
+          :rules="field.rule" />
+      </MinFormGroup>
+    </Form>
   </div>
 </template>

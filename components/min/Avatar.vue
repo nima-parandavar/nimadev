@@ -1,7 +1,10 @@
 <template>
   <AvatarRoot as="div" class="bg-white rounded-full inline-flex items-center justify-center" :class="[sizeStyle]">
-    <span v-if="towLetterCombination && !src" class="text-black">{{ towLetterCombination }}</span>
-    <NuxtImg v-else class="w-auto h-auto rounded-full h-" :src="src" />
+    <AvatarImage :src="src" :alt="label" class="w-auto h-auto rounded-full " />
+    <AvatarFallback class="to-center">
+      <span class="text-black">{{ towLetterCombination }}</span>
+    </AvatarFallback>
+    <!-- <NuxtImg v-else  :src="src" /> -->
   </AvatarRoot>
 </template>
 
@@ -10,7 +13,7 @@ import type { Color, size } from '~/interfaces/min';
 
 const props = withDefaults(defineProps<{
   label?: string,
-  src?: string,
+  src: string,
   color?: Color,
   size?: size
 }>(), { size: 'xs' })
@@ -18,13 +21,13 @@ const props = withDefaults(defineProps<{
 const sizeStyle = computed(() => {
   switch (props.size) {
     case 'xs':
-      return 'h-7 w-7'
+      return 'h-7 w-7 text-xs'
     case 'sm':
-      return 'h-9 w-9'
+      return 'h-9 w-9 text-xs'
     case 'lg':
-      return 'h-11 w-11'
+      return 'h-11 w-11 text-sm'
     case 'xl':
-      return 'h-14 w-14'
+      return 'h-14 w-14 text-md'
   }
 })
 

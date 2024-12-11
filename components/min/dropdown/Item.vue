@@ -5,17 +5,17 @@
       class="px-3 py-1 w-52 text-left rounded-lg transition ease-linear font-medium">
       <DropdownMenuItem class="inline-flex justify-between w-full">
 
-        <DropdownMenuLabel class="to-center" as="p" v-if="icon && !avatar">
+        <DropdownMenuLabel class="to-center" as="p" v-if="icon && !avatar && label">
           <Icon :name="icon" size="19" />
           <span class="text-sm">{{ label }}</span>
         </DropdownMenuLabel>
 
-        <DropdownMenuLabel class="to-center" as="p" v-else-if="!icon && avatar">
+        <DropdownMenuLabel class="to-center" as="p" v-else-if="!icon && avatar && label">
           <MinAvatar :label="avatar.label" :src="avatar.src" />
           <span class="text-sm">{{ label }}</span>
         </DropdownMenuLabel>
 
-        <DropdownMenuLabel class="to-center" as="p" v-if="icon && avatar">
+        <DropdownMenuLabel class="to-center" as="p" v-else-if="icon && avatar && label">
           <MinAvatar :label="avatar.label" :src="avatar.src" />
           <span class="text-sm">{{ label }}</span>
         </DropdownMenuLabel>

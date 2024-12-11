@@ -14,7 +14,8 @@ export default defineNuxtConfig({
     '@nuxtjs/html-validator',
     'radix-vue/nuxt',
     '@vueuse/nuxt',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@vee-validate/nuxt',
   ],
   // fonts
   fonts: {
@@ -30,6 +31,8 @@ export default defineNuxtConfig({
     '~/assets/scss/buttonStyle.css',
     '~/assets/scss/dropdownStyle.css',
     '~/assets/scss/badgeStyle.css',
+    '~/assets/scss/inputStyle.css',
+
   ],
   // i18n
   // plugins
@@ -40,6 +43,10 @@ export default defineNuxtConfig({
   icon: {
     size: '16',
     collections: ['lucide', 'line-md'],
+  },
+  // vee validate
+  veeValidate: {
+    autoImports: true
   }
 
 })
