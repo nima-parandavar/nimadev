@@ -46,7 +46,11 @@ export default defineNuxtConfig({
   },
   // vee validate
   veeValidate: {
-    autoImports: true
+    autoImports: true,
+    componentNames: {
+      Form: 'veeForm'
+    },
+    typedSchemaPackage: 'yup'
   }
 
 })

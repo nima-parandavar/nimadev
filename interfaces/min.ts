@@ -23,3 +23,21 @@ export interface DropdownItem {
 
 export type DropdownMenu = (DropdownItem[])[]
 
+// field
+export type fieldTypes = 'text' | 'password' | 'search' | 'url' | 'email' | 'number' | 'checkbox'
+
+export interface Field {
+  name: string;
+  label?: string;
+  icon?: string;
+  as?: fieldTypes;
+  required?: boolean;
+  description?: string;
+  helper?: string;
+  optional?: string;
+  rules?: any;
+  placeholder?: string;
+  min?: number;
+  max?: number;
+  step?: number;
+}

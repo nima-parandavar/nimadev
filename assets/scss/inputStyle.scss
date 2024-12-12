@@ -23,7 +23,93 @@
   }
 
   .input-#{$colorName}-icon {
-    // background-color: map-get($map: $values, $key: "100");
     color: map-get($map: $values, $key: "300");
+  }
+
+  .spin-input-#{$colorName} {
+    width: 2rem;
+    text-align: center;
+    border-radius: 50%;
+    background-color: $white;
+    color: map-get($map: $values, $key: "400");
+    &:focus {
+      border: map-get($map: $values, $key: "400") solid 1px;
+      outline: none;
+    }
+  }
+  .spin-input-#{$colorName}-btn {
+    background-color: map-get($map: $values, $key: "200");
+    color: map-get($map: $values, $key: "400");
+    &:hover {
+      background-color: map-get($map: $values, $key: "300");
+    }
+  }
+}
+
+@each $mode in $colorMode {
+  @each $colorName, $values in $colors {
+    .checkbox-#{$colorName}-#{$mode} {
+      background-color: map-get($map: $values, $key: "200");
+      position: relative;
+      &::after {
+        transition: all 0.5s ease;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 18px;
+        height: 18px;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        @if $mode == "dark" {
+          background-color: $black;
+        } @else {
+          background-color: $white;
+        }
+      }
+      &:checked {
+        background-color: map-get($map: $values, $key: "400");
+        &::after {
+          width: 5px;
+          height: 5px;
+        }
+        &:hover {
+          background-color: map-get($map: $values, $key: "400");
+        }
+      }
+      &:hover {
+        background-color: map-get($map: $values, $key: "300");
+      }
+    }
+
+    .switch-#{$colorName}-#{$mode} {
+      @if $mode == "dark" {
+        background-color: $white;
+      } @else {
+        background-color: $black;
+      }
+    }
+    .switch-#{$colorName}-#{$mode}[data-state="checked"] {
+      @if $mode == "light" {
+        background-color: map-get($map: $values, $key: "400");
+      } @else {
+        background-color: map-get($map: $values, $key: "300");
+      }
+    }
+
+    .switch-#{$colorName}-#{$mode}-thumb {
+      @if $mode == "dark" {
+        background-color: $black;
+      } @else {
+        background-color: $white;
+      }
+    }
+    .switch-#{$colorName}-#{$mode}-thumb[data-state="checked"] {
+      @if $mode == "light" {
+        color: map-get($map: $values, $key: "400");
+      } @else {
+        color: map-get($map: $values, $key: "300");
+      }
+    }
   }
 }
