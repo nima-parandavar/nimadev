@@ -21,3 +21,14 @@
   align-items: center;
   gap: 0.25rem;
 }
+
+@each $number in $colorKeys {
+  @each $colorName, $values in $colors {
+    .min-bg-#{$colorName}-#{$number} {
+      background-color: map-get($map: $values, $key: $number);
+    }
+    .min-text-#{$colorName}-#{$number} {
+      color: map-get($map: $values, $key: $number);
+    }
+  }
+}

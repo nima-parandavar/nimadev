@@ -18,4 +18,196 @@
   justify-items: center;
   align-items: center;
   gap: 0.25rem;
+}
+
+.min-bg-red-100 {
+  background-color: #fef2f4;
+}
+
+.min-text-red-100 {
+  color: #fef2f4;
+}
+
+.min-bg-blue-100 {
+  background-color: #f7eedd;
+}
+
+.min-text-blue-100 {
+  color: #f7eedd;
+}
+
+.min-bg-purple-100 {
+  background-color: #ffebff;
+}
+
+.min-text-purple-100 {
+  color: #ffebff;
+}
+
+.min-bg-green-100 {
+  background-color: #f1f8f4;
+}
+
+.min-text-green-100 {
+  color: #f1f8f4;
+}
+
+.min-bg-cream-100 {
+  background-color: #feece2;
+}
+
+.min-text-cream-100 {
+  color: #feece2;
+}
+
+.min-bg-yellow-100 {
+  background-color: #feffe1;
+}
+
+.min-text-yellow-100 {
+  color: #feffe1;
+}
+
+.min-bg-red-200 {
+  background-color: #fcc8d1;
+}
+
+.min-text-red-200 {
+  color: #fcc8d1;
+}
+
+.min-bg-blue-200 {
+  background-color: #ace2e1;
+}
+
+.min-text-blue-200 {
+  color: #ace2e1;
+}
+
+.min-bg-purple-200 {
+  background-color: #fb9ad1;
+}
+
+.min-text-purple-200 {
+  color: #fb9ad1;
+}
+
+.min-bg-green-200 {
+  background-color: #d8efd3;
+}
+
+.min-text-green-200 {
+  color: #d8efd3;
+}
+
+.min-bg-cream-200 {
+  background-color: #f7ded0;
+}
+
+.min-text-cream-200 {
+  color: #f7ded0;
+}
+
+.min-bg-yellow-200 {
+  background-color: #ffeea9;
+}
+
+.min-text-yellow-200 {
+  color: #ffeea9;
+}
+
+.min-bg-red-300 {
+  background-color: #ffabab;
+}
+
+.min-text-red-300 {
+  color: #ffabab;
+}
+
+.min-bg-blue-300 {
+  background-color: #41c9e2;
+}
+
+.min-text-blue-300 {
+  color: #41c9e2;
+}
+
+.min-bg-purple-300 {
+  background-color: #bc7fcd;
+}
+
+.min-text-purple-300 {
+  color: #bc7fcd;
+}
+
+.min-bg-green-300 {
+  background-color: #95d2b3;
+}
+
+.min-text-green-300 {
+  color: #95d2b3;
+}
+
+.min-bg-cream-300 {
+  background-color: #e2bfb3;
+}
+
+.min-text-cream-300 {
+  color: #e2bfb3;
+}
+
+.min-bg-yellow-300 {
+  background-color: #ffbf78;
+}
+
+.min-text-yellow-300 {
+  color: #ffbf78;
+}
+
+.min-bg-red-400 {
+  background-color: #d14d72;
+}
+
+.min-text-red-400 {
+  color: #d14d72;
+}
+
+.min-bg-blue-400 {
+  background-color: #008dda;
+}
+
+.min-text-blue-400 {
+  color: #008dda;
+}
+
+.min-bg-purple-400 {
+  background-color: #86469c;
+}
+
+.min-text-purple-400 {
+  color: #86469c;
+}
+
+.min-bg-green-400 {
+  background-color: #55ad9b;
+}
+
+.min-text-green-400 {
+  color: #55ad9b;
+}
+
+.min-bg-cream-400 {
+  background-color: #ff7d29;
+}
+
+.min-text-cream-400 {
+  color: #ff7d29;
+}
+
+.min-bg-yellow-400 {
+  background-color: #ff7d29;
+}
+
+.min-text-yellow-400 {
+  color: #ff7d29;
 }/*# sourceMappingURL=style.css.map */

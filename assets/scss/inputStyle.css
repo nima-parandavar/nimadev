@@ -233,16 +233,16 @@
   text-align: center;
   border-radius: 50%;
   background-color: #fcfdf2;
-  color: #ffbe98;
+  color: #ff7d29;
 }
 .spin-input-cream:focus {
-  border: #ffbe98 solid 1px;
+  border: #ff7d29 solid 1px;
   outline: none;
 }
 
 .spin-input-cream-btn {
   background-color: #f7ded0;
-  color: #ffbe98;
+  color: #ff7d29;
 }
 .spin-input-cream-btn:hover {
   background-color: #e2bfb3;
@@ -499,14 +499,14 @@
   background-color: #373a40;
 }
 .checkbox-cream-dark:checked {
-  background-color: #ffbe98;
+  background-color: #ff7d29;
 }
 .checkbox-cream-dark:checked::after {
   width: 5px;
   height: 5px;
 }
 .checkbox-cream-dark:checked:hover {
-  background-color: #ffbe98;
+  background-color: #ff7d29;
 }
 .checkbox-cream-dark:hover {
   background-color: #e2bfb3;
@@ -775,14 +775,14 @@
   background-color: #fcfdf2;
 }
 .checkbox-cream-light:checked {
-  background-color: #ffbe98;
+  background-color: #ff7d29;
 }
 .checkbox-cream-light:checked::after {
   width: 5px;
   height: 5px;
 }
 .checkbox-cream-light:checked:hover {
-  background-color: #ffbe98;
+  background-color: #ff7d29;
 }
 .checkbox-cream-light:hover {
   background-color: #e2bfb3;
@@ -793,7 +793,7 @@
 }
 
 .switch-cream-light[data-state=checked] {
-  background-color: #ffbe98;
+  background-color: #ff7d29;
 }
 
 .switch-cream-light-thumb {
@@ -801,7 +801,7 @@
 }
 
 .switch-cream-light-thumb[data-state=checked] {
-  color: #ffbe98;
+  color: #ff7d29;
 }
 
 .checkbox-yellow-light {

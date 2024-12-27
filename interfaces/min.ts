@@ -1,6 +1,8 @@
 export type Variant = 'solid' | 'link' | 'soft'
 export type Color = 'red' | 'blue' | 'green' | 'yellow' | 'cream' | 'purple'
 export type size = 'xs' | 'sm' | 'lg' | 'xl'
+export type Side = 'left' | 'right' | 'bottom' | 'top' | 'center'
+export type ScreenSize = 'fullscreen' | 'fit' | 'wide'
 
 // avatar
 export interface Avatar {

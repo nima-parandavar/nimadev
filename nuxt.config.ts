@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/image',
     '@vee-validate/nuxt',
+    'nuxt-i18n-micro'
   ],
   // fonts
   fonts: {
@@ -51,6 +52,19 @@ export default defineNuxtConfig({
       Form: 'veeForm'
     },
     typedSchemaPackage: 'yup'
+  },
+  // i18n config
+  i18n: {
+    locales: [
+      { code: 'fa', iso: 'fa-IR', dir: 'rtl' },
+      { code: 'en', iso: 'en-US', dir: 'ltr' }
+    ],
+    defaultLocale: 'en',
+    translationDir: 'locales',
+    meta: true,
+    debug: true,
+    autoDetectLanguage: true,
+    strategy: 'prefix'
   }
 
 })

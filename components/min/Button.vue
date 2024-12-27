@@ -1,11 +1,11 @@
 <template>
   <button :type="type">
 
-    <span v-if="variant === 'solid'" class="rounded-full to-center px-5 py-1 transition ease-linear text-center "
+    <span v-if="variant === 'solid'" class="rounded-full to-center px-10 py-2  transition ease-linear text-center "
       :class="[buttonStyle]">
       <span v-if="label">{{ label }}</span>
       <Icon v-if="icon && !loading" :name="icon" />
-      <Icon v-else :name="loadingIcon" />
+      <Icon v-if="loading" :name="loadingIcon" />
     </span>
 
     <span v-else-if="variant === 'link'" class="to-center px-5 py-1 transition ease-linear text-center"
@@ -32,7 +32,7 @@ import type { Variant, Color } from '~/interfaces/min';
 const { theme } = storeToRefs(useThemeStore())
 
 const props = withDefaults(defineProps<{
-  label?: string | number,
+  label?: string | number | unknown,
   icon?: string,
   variant?: Variant,
   type?: ButtonHTMLAttributes['type'],
