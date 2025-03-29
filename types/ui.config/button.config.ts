@@ -2,8 +2,8 @@ import { tv } from "tailwind-variants"
 
 export default tv({
   slots: {
-    base: "inline-flex justify-center items-center gap-1 px-6 py-2 transition",
-    loadingAnimation: 'animation-spin',
+    base: "inline-flex justify-center items-center gap-1 px-6 py-2 transition font-semibold",
+    loadingAnimation: 'animate-spin',
     labelSize: '',
     iconSize: '',
     icon: 'inline-flex items-center justify-center',
@@ -61,7 +61,7 @@ export default tv({
         icon: 'bg-curious-blue-200'
       },
       purple: {
-        textColor: 'text-vivid-violet-400 hover:text-vivid-violet-400/90',
+        textColor: 'text-vivid-violet-400 hover:text-vivid-violet-400/90 ',
         bgColor: 'bg-vivid-violet-200 hover:bg-vivid-violet-200/80',
         borderColor: 'border-vivid-violet-200',
         icon: 'bg-vivid-violet-200'
@@ -72,13 +72,15 @@ export default tv({
         base: ''
       },
       outline: {
-        base: 'rounded-full border'
+        base: 'rounded-full border disabled:text-bombay disabled:border-bombay-300/20 disabled:hover:bg-bombay-300/10',
+        icon: 'bg-transparent',
       },
       solid: {
-        base: 'rounded-full'
+        base: 'rounded-full disabled:bg-bombay-300/20 disabled:hover:bg-bombay-300/10',
+        icon: 'bg-transparent disabled:bg-transparent'
       },
       soft: {
-        base: ''
+        base: '',
       }
     }
 
@@ -89,7 +91,8 @@ export default tv({
       class: {
         bgColor: 'bg-transparent hover:bg-transparent',
         borderColor: 'border-transparent',
-        textColor: ''
+        textColor: '',
+        icon: 'bg-transparent'
       },
     },
     {
@@ -111,7 +114,30 @@ export default tv({
         borderColor: 'border-transparent',
         icon: 'p-3 mx-0.5 rounded-[50%]'
       }
+    },
+    {
+      variant: 'outline',
+      disabled: true,
+      class: {
+        bgColor: 'disabled:bg-transparent disabled:hover:text-bombay-300 bg-red-500',
+        textColor: 'bg-red-400'
+      }
+    },
+    {
+      variant: ['link', 'outline', 'soft', 'solid'],
+      disabled: true,
+      class: {
+        textColor: 'disabled:text-bombay-400 disabled:hover:text-bombay-400/90'
+      }
+    },
+    {
+      variant: 'soft',
+      disabled: true,
+      class: {
+        icon: 'bg-bombay-300/20'
+      }
     }
+
   ]
 
 })

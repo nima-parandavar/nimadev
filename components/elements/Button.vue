@@ -1,12 +1,11 @@
 <template>
-  <button :disabled="disabled" :class="[style.base(), style.textColor(), style.bgColor(), style.borderColor()]">
+  <button :disabled="disabled || loading" :class="style.root" :type="type">
 
-    <span :class="style.icon()">
-      <Icon v-if="icon && !loading" :name="icon" :class="[style.iconSize()]" />
-      <Icon v-if="loading" :name="loadingIconName"
-        :class="[style.iconSize(), style.loadingAnimation(), style.icon()]" />
+    <span :class="style.iconRoot">
+      <Icon v-if="icon && !loading" :name="icon" :class="[style.iconSize]" />
+      <Icon v-if="loading" :name="loadingIconName" :class="[style.iconSize, style.animation]" />
     </span>
-    <span v-if="label" :class="[style.labelSize()]">{{ label }}</span>
+    <span v-if="label" :class="style.labelSize">{{ label }}</span>
 
   </button>
 </template>
@@ -14,6 +13,7 @@
 <script lang="ts" setup>
 import type { Color, Size, Variant } from '~/types/theme';
 import buttonConfig from '~/types/ui.config/button.config';
+import { twMerge } from 'tailwind-merge';
 const { theme } = useAppConfig()
 
 
@@ -25,13 +25,20 @@ const props = defineProps({
   disabled: { type: Boolean, required: false, default: false },
   color: { type: String as PropType<Color | 'auto'>, required: false, defalt: 'auto' },
   variant: { type: String as PropType<Variant>, required: false, default: 'solid' },
-  size: { type: String as PropType<Size>, required: false, default: 'sm' }
+  size: { type: String as PropType<Size>, required: false, default: 'sm' },
+  type: { type: String as PropType<HTMLButtonElement['type']>, default: 'button' }
 })
 
 const style = computed(() => {
-  const classes = buttonConfig({ size: props.size, variant: props.variant, disabled: props.disabled, color: buttonColor.value })
+  const cls = buttonConfig({ size: props.size, variant: props.variant, disabled: props.disabled || props.loading, color: buttonColor.value })
 
-  return { ...classes }
+  return {
+    root: twMerge(cls.base(), cls.textColor(), cls.bgColor(), cls.borderColor()),
+    iconRoot: cls.icon(),
+    iconSize: cls.iconSize(),
+    animation: cls.loadingAnimation(),
+    labelSize: cls.labelSize()
+  }
 })
 
 const loadingIconName = computed(() => {

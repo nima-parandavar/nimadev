@@ -1,0 +1,12 @@
+:root {
+  font-family: "Quicksand", "Roboto Flex", sans-serif;
+}
+
+.dark-mode body {
+  background-color: #1a1a1d;
+}
+
+.light-mode body {
+  background-color: #fdfaf6;
+  color: #45474b;
+}
