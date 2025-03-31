@@ -2,7 +2,7 @@ import { tv } from "tailwind-variants"
 
 export default tv({
   slots: {
-    base: "inline-flex justify-center items-center gap-1 px-6 py-2 transition font-semibold",
+    base: "inline-flex justify-center items-center gap-1 px-6 py-2 transition font-[500]",
     loadingAnimation: 'animate-spin',
     labelSize: '',
     iconSize: '',
@@ -69,18 +69,18 @@ export default tv({
     },
     variant: {
       link: {
-        base: ''
+        base: 'px-2 py-1'
       },
       outline: {
         base: 'rounded-full border disabled:text-bombay disabled:border-bombay-300/20 disabled:hover:bg-bombay-300/10',
         icon: 'bg-transparent',
       },
       solid: {
-        base: 'rounded-full disabled:bg-bombay-300/20 disabled:hover:bg-bombay-300/10',
+        base: 'rounded-full disabled:bg-bombay-300/20 disabled:hover:bg-bombay-300/10 px-10 py-3',
         icon: 'bg-transparent disabled:bg-transparent'
       },
       soft: {
-        base: '',
+        base: 'px-2 py-1',
       }
     }
 

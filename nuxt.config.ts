@@ -12,11 +12,21 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/color-mode',
     '@nuxtjs/html-validator',
-    '@nuxt/fonts'
+    '@nuxt/fonts',
+    'motion-v/nuxt'
   ],
   // i18n
   i18n: {
-
+    locales: [
+      { code: 'en', iso: 'en-US', dir: 'ltr' },
+      { code: 'fa', iso: 'fa-IR', dir: 'rtl' }
+    ],
+    defaultLocale: 'en',
+    translationDir: 'locales',
+    meta: true,
+    debug: process.env.NODE_ENV === 'production' ? false : true,
+    autoDetectLanguage: true,
+    strategy: 'prefix_and_default'
   },
   // mongo
   mongoose: {
@@ -30,7 +40,7 @@ export default defineNuxtConfig({
   ],
   // color mode
   colorMode: {
-    preference: 'system',
+    preference: 'light',
     fallback: 'light'
   },
   // fonts
@@ -46,6 +56,15 @@ export default defineNuxtConfig({
       RadixVueResolver({
         prefix: 'rdx'
       })
+    ]
+  },
+  components: {
+    dirs: [
+      {
+        path: '~/components/elements',
+        prefix: 'min'
+      },
+      '~/components'
     ]
   }
 })

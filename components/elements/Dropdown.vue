@@ -1,40 +1,48 @@
 <template>
-  <DropdownMenuRoot>
+  <DropdownMenuRoot v-model:open="toggleState">
     <DropdownMenuTrigger :as-child="true">
       <slot />
     </DropdownMenuTrigger>
 
     <DropdownMenuPortal>
-      <DropdownMenuContent :class="[style.rounded(), style.bgColor(), style.contentBase()]" :collision-padding="10">
-        <template v-for="(group, index) in items" :key="index">
+      <AnimatePresence :initial="false">
+        <motion v-show="toggleState" key="dropdown" :animate="{ opacity: 1, transform: 'translateY(0px)' }"
+          :exit="{ opacity: 0, transform: 'translateY(-10px)' }"
+          :initial="{ opacity: 0, transform: 'translateY(-10px)' }">
 
-          <DropdownMenuGroup :class="[style.groupItem()]">
-            <p v-if="group.label" :class="[style.groupLabel(), style.groupLabelColor()]">{{ group.label }}</p>
+          <DropdownMenuContent :class="style.dropdownContent" :collision-padding="10" align="center">
+            <template v-for="(group, index) in items" :key="index" as-child>
 
-            <DropdownMenuItem v-for="item in group.items" :key="item.key" :class="[style.item()]"
-              :disabled="item.disabled">
+              <DropdownMenuGroup :class="style.dropdownGroup">
+                <p v-if="group.label" :class="style.dropdownMenuGroupLabel">{{ group.label }}</p>
 
-              <slot :name="item.slot ? item.slot : `item_${item.key}`" :item="item">
+                <DropdownMenuItem v-for="item in group.items" :key="item.key" :class="style.dropdownMenuItem"
+                  :disabled="item.disabled">
 
-                <div :class="[style.label()]">
-                  <Icon v-if="item.icon" :name="item.icon" :class="style.iconSize()" />
-                  <DropdownMenuLabel :class="style.labelSize()">{{ item.label }}</DropdownMenuLabel>
-                </div>
+                  <slot :name="item.slot ? item.slot : `item_${item.key}`" :item="item">
+
+                    <div :class="style.dropdownMenuItemLabel.label">
+                      <Icon v-if="item.icon" :name="item.icon" :class="style.dropdownMenuItemIcon.size" />
+                      <DropdownMenuLabel :class="style.dropdownMenuItemLabel.size">{{ item.label }}</DropdownMenuLabel>
+                    </div>
 
 
-                <div :class="style.postfix()">
-                  {{ item.postfix }}
-                </div>
+                    <div :class="style.dropdownMenuItemLabel.postfix">
+                      {{ item.postfix }}
+                    </div>
 
-              </slot>
-            </DropdownMenuItem>
+                  </slot>
+                </DropdownMenuItem>
 
-          </DropdownMenuGroup>
-          <hr :class="[style.spliter()]" v-if="index + 1 !== items.length" />
-        </template>
+              </DropdownMenuGroup>
+              <hr :class="style.dropdownSpliter" v-if="index + 1 !== items.length" />
+            </template>
 
-      </DropdownMenuContent>
+          </DropdownMenuContent>
+        </motion>
+      </AnimatePresence>
     </DropdownMenuPortal>
+
   </DropdownMenuRoot>
 </template>
 
@@ -53,7 +61,10 @@ import type { PropType } from 'vue';
 import type { Items } from '~/types/dropdown';
 import type { Color, Size } from '~/types/theme';
 import dropdownConfig from '~/types/ui.config/dropdown.config';
-const { theme } = useAppConfig()
+import { twMerge } from 'tailwind-merge';
+
+const themeMode = themeModeStore()
+const toggleState = ref(false)
 
 const props = defineProps({
   items: {
@@ -75,10 +86,19 @@ const style = computed(() => {
     color: dropdownColor.value,
     size: props.size
   })
-  return { ...cls }
+  return {
+    dropdownContent: twMerge(cls.rounded(), cls.bgColor(), cls.contentBase()),
+    dropdownGroup: cls.groupItem(),
+    dropdownMenuGroupLabel: twMerge(cls.groupLabel(), cls.groupLabelColor()),
+    dropdownMenuItem: cls.item(),
+    dropdownMenuItemLabel: { label: cls.label(), size: cls.labelSize(), postfix: cls.postfix() },
+    dropdownMenuItemIcon: { size: cls.iconSize() },
+    dropdownSpliter: cls.spliter()
+  }
 })
 
 const dropdownColor = computed(() => {
-  return props.color === 'auto' ? theme.primaryColor : props.color
+  // @ts-expect-error
+  return props.color === 'auto' ? themeMode.theme : props.color
 })
 </script>

@@ -1,7 +1,7 @@
 <template>
   <button :disabled="disabled || loading" :class="style.root" :type="type">
 
-    <span :class="style.iconRoot">
+    <span :class="style.iconRoot" v-if="icon || loading">
       <Icon v-if="icon && !loading" :name="icon" :class="[style.iconSize]" />
       <Icon v-if="loading" :name="loadingIconName" :class="[style.iconSize, style.animation]" />
     </span>
@@ -15,6 +15,7 @@ import type { Color, Size, Variant } from '~/types/theme';
 import buttonConfig from '~/types/ui.config/button.config';
 import { twMerge } from 'tailwind-merge';
 const { theme } = useAppConfig()
+const { theme: currentTheme } = storeToRefs(themeModeStore())
 
 
 const props = defineProps({
@@ -23,7 +24,7 @@ const props = defineProps({
   loading: { type: Boolean, required: false },
   loadingIcon: { type: String, required: false },
   disabled: { type: Boolean, required: false, default: false },
-  color: { type: String as PropType<Color | 'auto'>, required: false, defalt: 'auto' },
+  color: { type: String as PropType<Color | 'auto'>, required: false, default: 'auto' },
   variant: { type: String as PropType<Variant>, required: false, default: 'solid' },
   size: { type: String as PropType<Size>, required: false, default: 'sm' },
   type: { type: String as PropType<HTMLButtonElement['type']>, default: 'button' }
@@ -46,7 +47,7 @@ const loadingIconName = computed(() => {
 })
 
 const buttonColor = computed(() => {
-  return props.color === 'auto' ? theme.primaryColor : props.color
+  return props.color === 'auto' ? currentTheme.value : props.color
 })
 
 </script>

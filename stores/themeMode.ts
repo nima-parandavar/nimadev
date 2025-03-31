@@ -3,15 +3,19 @@ import type { Color } from '~/types/theme'
 
 
 export const themeModeStore = defineStore('themeMode', () => {
-  const { theme: uiTheme } = useAppConfig()
+  let themeStorage: unknown
+  let theme = ref<Color>()
 
-  const theme = ref<Color>(uiTheme.primaryColor)
   const setTheme = (color: Color) => {
     theme.value = color
     localStorage.setItem('theme', color)
   }
 
+  if (import.meta.client) {
+    themeStorage = localStorage.getItem('theme')
+    theme.value = themeStorage as Color
+    return { theme, setTheme }
 
+  }
 
-  return { theme, setTheme }
 })

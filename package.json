@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.13.2",
+    "motion-v": "^1.0.0-alpha.0",
     "nuxt": "^3.16.1",
     "nuxt-i18n-micro": "^1.81.0",
     "nuxt-mongoose": "^1.0.6",
@@ -21,6 +22,7 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@iconify-icons/iconoir": "^1.2.30",
     "@iconify-json/lucide": "^1.2.33",
     "@nuxt/fonts": "^0.11.0",
     "@nuxt/icon": "^1.11.0",

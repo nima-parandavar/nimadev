@@ -5,6 +5,6 @@ export default defineAppConfig({
     loadingIcon: 'i-lucide:loader-circle'
   },
   icon: {
-    collections: ['lucide']
+    collections: ['lucide', 'iconoir']
   }
 })
