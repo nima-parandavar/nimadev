@@ -1,5 +1,6 @@
 <template>
-  <button :disabled="disabled || loading" :class="style.root" :type="type">
+  <component :is="to ? NuxtLink : 'button'" :to="to" :disabled="disabled || loading" :class="style.root" :type="type"
+    :exact-active-class="exactActiveClass">
 
     <span :class="style.iconRoot" v-if="icon || loading">
       <Icon v-if="icon && !loading" :name="icon" :class="[style.iconSize]" />
@@ -7,16 +8,17 @@
     </span>
     <span v-if="label" :class="style.labelSize">{{ label }}</span>
 
-  </button>
+  </component>
 </template>
 
 <script lang="ts" setup>
 import type { Color, Size, Variant } from '~/types/theme';
-import buttonConfig from '~/types/ui.config/button.config';
+import buttonConfig from '~/ui/button.config';
 import { twMerge } from 'tailwind-merge';
-const { theme } = useAppConfig()
-const { theme: currentTheme } = storeToRefs(themeModeStore())
+import { NuxtLink } from '#components';
 
+const { theme } = useAppConfig()
+const { currentTheme } = storeToRefs(themeModeStore())
 
 const props = defineProps({
   label: { type: String, required: false },
@@ -27,7 +29,9 @@ const props = defineProps({
   color: { type: String as PropType<Color | 'auto'>, required: false, default: 'auto' },
   variant: { type: String as PropType<Variant>, required: false, default: 'solid' },
   size: { type: String as PropType<Size>, required: false, default: 'sm' },
-  type: { type: String as PropType<HTMLButtonElement['type']>, default: 'button' }
+  type: { type: String as PropType<HTMLButtonElement['type']>, default: 'button' },
+  to: { type: String, required: false },
+  activeClass: { type: String as PropType<string | 'currentTheme'>, required: false, default: 'currentTheme' }
 })
 
 const style = computed(() => {
@@ -38,7 +42,7 @@ const style = computed(() => {
     iconRoot: cls.icon(),
     iconSize: cls.iconSize(),
     animation: cls.loadingAnimation(),
-    labelSize: cls.labelSize()
+    labelSize: cls.labelSize(),
   }
 })
 
@@ -48,6 +52,15 @@ const loadingIconName = computed(() => {
 
 const buttonColor = computed(() => {
   return props.color === 'auto' ? currentTheme.value : props.color
+})
+
+const exactActiveClass = computed(() => {
+  if (props.activeClass === 'currentTheme') {
+    const cls = buttonConfig({ color: currentTheme.value })
+    console.log(cls.activeClass())
+    return cls.activeClass()
+  }
+  return props.activeClass
 })
 
 </script>

@@ -1,4 +1,5 @@
-export type Color = 'red' | 'purple' | 'blue' | 'green' | 'orange'
+export type Color = 'red' | 'purple' | 'blue' | 'green' | 'orange' | 'black'
 export type Mode = 'light' | 'dark' | 'system'
 export type Variant = 'link' | 'outline' | 'solid' | 'soft'
 export type Size = 'sm' | 'md' | 'lg' | 'xl'
+export type Side = 'left' | 'right' | 'bottom' | 'top' | 'center'

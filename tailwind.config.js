@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./types/ui.config/**/*.{js,ts}"
+    "./ui/**/*.{js,ts}"
   ],
   theme: {
     extend: {
@@ -42,6 +42,41 @@ export default {
           200: '#ffeea9',
           100: '#feffd2'
         },
+        'mako': {
+          400: '#41444B',
+          300: '#52575D',
+          200: '#CABFAB',
+          100: '#DFD8C8'
+        }
+      },
+      keyframes: {
+        overlayShow: {
+          from: { opacity: 0 },
+          to: { opacity: 1 }
+        },
+        contentCenter: {
+          from: { transform: 'translate(-50%, -50%) scale(0.8)', opacity: 0 },
+          to: { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 }
+        },
+        contentBottom: {
+          from: { transform: 'translate(-50%, 100%)', opacity: 0 },
+          to: { transform: 'translate(-50%, 0)', opacity: 1 }
+        },
+        contentLeft: {
+          from: { transform: 'translateX(-100%)', opacity: 0 },
+          to: { transform: 'translateX(0%)', opacity: 1 }
+        },
+        contentRight: {
+          from: { transform: 'translateX(100px)', opacity: 0 },
+          to: { transform: 'translateX(0px)', opacity: 1 }
+        }
+      },
+      animation: {
+        overlayShow: 'overlayShow 500ms cubic-bezier(0.16, 1, 0.3, 1)',
+        dialogCenterContent: 'contentCenter 500ms cubic-bezier(0.16, 1, 0.3, 1)',
+        dialogCenterBottom: 'contentBottom 500ms cubic-bezier(0.16, 1, 0.3, 1)',
+        dialogCenterLeft: 'contentLeft 500ms cubic-bezier(0.16, 1, 0.3, 1)',
+        dialogCenterRight: 'contentRight 500ms cubic-bezier(0.16, 1, 0.3, 1)',
       }
     },
   },

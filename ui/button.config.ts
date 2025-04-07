@@ -10,6 +10,7 @@ export default tv({
     textColor: '',
     bgColor: '',
     borderColor: '',
+    activeClass: ''
   },
 
   variants: {
@@ -40,31 +41,42 @@ export default tv({
         textColor: 'text-cabaret-400 hover:text-cabaret-400/90',
         bgColor: 'bg-cabaret-200 hover:bg-cabaret-200/80',
         borderColor: 'border-cabaret-200',
-        icon: 'bg-cabaret-200'
+        icon: 'bg-cabaret-200',
+        activeClass: 'text-red-500 hover:text-red-500/90 dark:text-red-400 dark:hover:text-red-400/90'
       },
       orange: {
         textColor: 'text-pumpkin-400 hover:text-pumpkin-400/90',
         bgColor: 'bg-pumpkin-200 hover:bg-pumpkin-200/80',
         borderColor: 'border-pumpkin-200',
-        icon: 'bg-pumpkin-200'
+        icon: 'bg-pumpkin-200',
+        activeClass: 'text-orange-500 hover:text-orange-500/90 dark:text-orange-400 dark:hover:text-orange-400/90',
       },
       green: {
         textColor: 'text-keppel-400 hover:text-keppel-400/90',
         bgColor: 'bg-keppel-200 hover:bg-keppel-200/80',
         borderColor: 'border-keppel-200',
-        icon: 'bg-keppel-200'
+        icon: 'bg-keppel-200',
+        activeClass: 'text-green-500 hover:text-green-500/90 dark:text-green-400 dark:hover:text-green-400/90'
       },
       blue: {
         textColor: 'text-curious-blue-400 hover:text-curious-blue-400/90',
         bgColor: 'bg-curious-blue-200 hover:bg-curious-blue-200/80',
         borderColor: 'border-curious-blue-200',
-        icon: 'bg-curious-blue-200'
+        icon: 'bg-curious-blue-200',
+        activeClass: 'text-blue-500 hover:text-blue-500/90 dark:text-blue-400 dark:hover:text-blue-400/90',
       },
       purple: {
         textColor: 'text-vivid-violet-400 hover:text-vivid-violet-400/90 ',
         bgColor: 'bg-vivid-violet-200 hover:bg-vivid-violet-200/80',
         borderColor: 'border-vivid-violet-200',
-        icon: 'bg-vivid-violet-200'
+        icon: 'bg-vivid-violet-200',
+        activeClass: 'text-purple-500 hover:text-purple-500/90 dark:text-purple-400 dark:hover:text-purple-400/90',
+      },
+      black: {
+        textColor: 'text-mako-400 hover:text-mako-400/90 dark:text-[#fdfaf6] dark:hover:text-[#fdfaf6]/90 ',
+        bgColor: 'bg-mako-200 hover:bg-mako-200/80',
+        borderColor: 'border-mako-200',
+        icon: 'bg-mako-200',
       }
     },
     variant: {

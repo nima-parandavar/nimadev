@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/html-validator',
     '@nuxt/fonts',
-    'motion-v/nuxt'
+    'motion-v/nuxt',
+    'pinia-plugin-persistedstate'
   ],
   // i18n
   i18n: {

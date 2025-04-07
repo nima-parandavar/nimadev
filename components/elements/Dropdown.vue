@@ -60,11 +60,12 @@ import {
 import type { PropType } from 'vue';
 import type { Items } from '~/types/dropdown';
 import type { Color, Size } from '~/types/theme';
-import dropdownConfig from '~/types/ui.config/dropdown.config';
+import dropdownConfig from '~/ui/dropdown.config';
 import { twMerge } from 'tailwind-merge';
 
 const themeMode = themeModeStore()
 const toggleState = ref(false)
+const { currentTheme } = storeToRefs(themeMode)
 
 const props = defineProps({
   items: {
@@ -98,7 +99,6 @@ const style = computed(() => {
 })
 
 const dropdownColor = computed(() => {
-  // @ts-expect-error
-  return props.color === 'auto' ? themeMode.theme : props.color
+  return props.color === 'auto' ? currentTheme.value : props.color
 })
 </script>
