@@ -7,11 +7,7 @@
       <DialogOverlay :class="style.overlay" />
       <DialogContent :class="style.content">
         <slot name="content">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa quas provident magni amet omnis molestias,
-            inventore veniam quibusdam, sit alias dolores a! Laboriosam maiores exercitationem ratione temporibus
-            laborum, ab sapiente dolor, labore sed quis voluptatum tenetur atque rerum mollitia, in quia cum delectus
-            velit veritatis officiis? Minima asperiores nulla suscipit dolore eaque nostrum qui magni praesentium
-            placeat, ex deleniti illum.</p>
+
         </slot>
       </DialogContent>
     </DialogPortal>
@@ -36,7 +32,7 @@ import { twMerge } from 'tailwind-merge';
 const model = defineModel()
 
 const props = defineProps({
-  side: { type: String as PropType<Side>, default: 'center' }
+  side: { type: String as PropType<Exclude<Side, 'top'>>, default: 'center' }
 })
 
 const style = computed(() => {

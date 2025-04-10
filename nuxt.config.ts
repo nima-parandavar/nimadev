@@ -37,7 +37,7 @@ export default defineNuxtConfig({
   plugins: ['~/plugins/defaultValue.ts'],
   // cdd
   css: [
-    '~/assets/css/main.css'
+    '~/assets/scss/main.scss'
   ],
   // color mode
   colorMode: {

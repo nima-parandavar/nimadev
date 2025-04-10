@@ -1,0 +1,29 @@
+$highlightColors: (
+  "red": #fcc8d1,
+  "blue": #ace2e1,
+  "purple": #fb9ad1,
+  "orange": #ffeea9,
+  "green": #d8efd3,
+);
+
+:root {
+  font-family: "Quicksand", "Roboto Flex", sans-serif;
+}
+
+.dark-mode body {
+  background-color: #1a1a1d;
+}
+
+.light-mode body {
+  background-color: #fdfaf6;
+  color: #45474b;
+}
+
+@each $colorName, $colorCode in $highlightColors {
+  .#{$colorName}-theme {
+    &::selection {
+      background-color: $colorCode;
+      opacity: 0.2;
+    }
+  }
+}

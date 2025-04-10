@@ -1,6 +1,6 @@
 <template>
   <MinDropdown :items="items">
-    <MinButton size="md" variant="soft" icon="i-lucide:swatch-book" />
+    <MinButton :size="screen === 'sm' ? 'sm' : 'md'" variant="soft" icon="i-lucide:swatch-book" />
     <template #theme>
       <div class="flex flex-row items-center justify-between w-full">
         <span class="cursor-pointer w-8 h-8 rounded-full bg-cabaret-400" @click="theme.setTheme('red')"></span>
@@ -16,7 +16,9 @@
 
 <script lang="ts" setup>
 import type { Items } from '~/types/dropdown';
+
 const theme = themeModeStore()
+const { screen, isMobileOrTablet } = useScreen()
 
 const items: Items = [
   {

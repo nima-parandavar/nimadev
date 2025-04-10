@@ -2,6 +2,9 @@ type ScreenSize = 'sm' | 'md' | 'lg' | 'xl' | '2xl'
 
 export const useScreen = () => {
   const state = ref<ScreenSize | undefined>(undefined)
+  const isMobileOrTablet = ref<boolean>(false)
+  const isDesktop = ref<boolean>(false)
+
   function checkSize() {
     const size = window.innerWidth
     if (size <= 640) {
@@ -17,6 +20,9 @@ export const useScreen = () => {
     } else {
       state.value = undefined
     }
+
+    isMobileOrTablet.value = size <= 768 ? true : false
+    isDesktop.value = size > 768 ? true : false
   }
 
   onBeforeMount(() => {
@@ -29,5 +35,9 @@ export const useScreen = () => {
     window.removeEventListener('resize', checkSize)
   })
 
-  return { screen: state }
+  return {
+    screen: state,
+    isMobileOrTablet,
+    isDesktop
+  }
 }

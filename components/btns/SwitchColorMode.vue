@@ -1,8 +1,9 @@
 <template>
-  <MinButton size="md" variant="soft" :icon="colorModeIcon" @click="switchColorMode" />
+  <MinButton :size="screen === 'sm' ? 'sm' : 'md'" variant="soft" :icon="colorModeIcon" @click="switchColorMode" />
 </template>
 
 <script lang="ts" setup>
+const { screen } = useScreen()
 const colorMode = useColorMode()
 const colorModeIcon = computed(() => {
   switch (colorMode.value) {

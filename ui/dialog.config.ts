@@ -2,10 +2,10 @@ import { tv } from "tailwind-variants"
 
 export default tv({
   slots: {
-    overlay: 'bg-mako-400/50 dark:bg-bombay-100/30 backdrop-blur-sm inset-0 fixed data-[state=open]:animate-overlayShow',
+    overlay: 'bg-mako-400/50 dark:bg-bombay-100/30 backdrop-blur-sm inset-0 fixed data-[state=open]:animate-overlayShow z-[998]',
     padding: 'px-5 py-8',
     rounded: '',
-    content: ' bg-white fixed',
+    content: ' bg-white fixed z-[999]',
   },
   variants: {
     side: {

@@ -57,7 +57,6 @@ const buttonColor = computed(() => {
 const exactActiveClass = computed(() => {
   if (props.activeClass === 'currentTheme') {
     const cls = buttonConfig({ color: currentTheme.value })
-    console.log(cls.activeClass())
     return cls.activeClass()
   }
   return props.activeClass
