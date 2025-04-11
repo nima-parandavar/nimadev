@@ -14,7 +14,6 @@
       <BtnsSwitchColorMode />
       <BtnsChangeTheme />
       <MinButton icon="lucide:languages" color="auto" size="md" variant="soft" v-if="isDesktop" />
-      <MinButton label="Log in" icon="lucide:log-in" color="auto" size="md" v-if="isDesktop" />
       <MinDialog v-model="openSideBar" side="left" v-if="isMobileOrTablet">
         <MinButton variant="link" color="black" icon="i-lucide:menu" size="md" />
       </MinDialog>
@@ -23,6 +22,6 @@
 </template>
 
 <script lang="ts" setup>
-const { isMobileOrTablet, isDesktop } = useScreen()
+const { isMobileOrTablet, isDesktop, screen } = useScreen()
 const openSideBar = ref(false)
 </script>
