@@ -1,17 +1,44 @@
-$highlightColors: (
-  "red": #fcc8d1,
-  "blue": #ace2e1,
-  "purple": #fb9ad1,
-  "orange": #ffeea9,
-  "green": #d8efd3,
+$colors: (
+  "red": (
+    "400": #d14d72,
+    "300": #ffabab,
+    "200": #fcc8d1,
+    "100": #fef2f4,
+  ),
+  "blue": (
+    "400": #008dda,
+    "300": #41c9e2,
+    "200": #ace2e1,
+    "100": #f7eedd,
+  ),
+  "purple": (
+    "400": #86469c,
+    "300": #bc7fcd,
+    "200": #fb9ad1,
+    "100": #ffcdea,
+  ),
+  "orange": (
+    "400": #ff7d29,
+    "300": #ffbf78,
+    "200": #ffeea9,
+    "100": #feffd2,
+  ),
+  "green": (
+    "400": #55ad9b,
+    "300": #95d2b3,
+    "200": #d8efd3,
+    "100": #f1f8e8,
+  ),
 );
 
 :root {
   font-family: "Quicksand", "Roboto Flex", sans-serif;
+  color-scheme: light dark;
 }
 
 .dark-mode body {
   background-color: #1a1a1d;
+  color: #fdfaf6;
 }
 
 .light-mode body {
@@ -19,11 +46,38 @@ $highlightColors: (
   color: #45474b;
 }
 
-@each $colorName, $colorCode in $highlightColors {
-  .#{$colorName}-theme {
+@each $colorName, $colorCode in $colors {
+  .#{$colorName} {
     &::selection {
-      background-color: $colorCode;
-      opacity: 0.2;
+      background-color: rgba(
+        $color: map-get($map: $colorCode, $key: "200"),
+        $alpha: 0.5
+      );
+    }
+    b,
+    strong {
+      color: light-dark(
+        map-get($map: $colorCode, $key: "400"),
+        map-get($map: $colorCode, $key: "300")
+      );
+    }
+    .#{$colorName}-gradient {
+      background: linear-gradient(
+        to right,
+        map-get($map: $colorCode, $key: "400"),
+        map-get($map: $colorCode, $key: "300")
+      );
+      color: transparent;
+      background-clip: text;
+    }
+
+    .sqr-#{$colorName} {
+      background-color: map-get($map: $colorCode, $key: "300");
     }
   }
+}
+
+b,
+strong {
+  font-weight: 500;
 }

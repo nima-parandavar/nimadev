@@ -6,6 +6,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        'white': '#fdfaf6',
+        'black': '#45474b',
         'cabaret': {
           400: '#d14d72',
           300: '#ffabab',

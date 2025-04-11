@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout :class="[`${currentTheme}-theme`]">
+  <NuxtLayout :class="[`${currentTheme}`]">
     <NuxtPage />
   </NuxtLayout>
 </template>

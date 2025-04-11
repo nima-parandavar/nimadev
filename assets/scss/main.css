@@ -1,0 +1,124 @@
+:root {
+  font-family: "Quicksand", "Roboto Flex", sans-serif;
+  color-scheme: light dark;
+}
+
+.dark-mode body {
+  background-color: #1a1a1d;
+  color: #fdfaf6;
+}
+
+.light-mode body {
+  background-color: #fdfaf6;
+  color: #45474b;
+}
+
+.red::-moz-selection {
+  background-color: rgba(252, 200, 209, 0.5);
+}
+
+.red::selection {
+  background-color: rgba(252, 200, 209, 0.5);
+}
+.red b,
+.red strong {
+  color: light-dark(#d14d72, #ffabab);
+}
+.red .red-gradient {
+  background: linear-gradient(to right, #d14d72, #ffabab);
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.red .sqr-red {
+  background-color: #ffabab;
+}
+
+.blue::-moz-selection {
+  background-color: rgba(172, 226, 225, 0.5);
+}
+
+.blue::selection {
+  background-color: rgba(172, 226, 225, 0.5);
+}
+.blue b,
+.blue strong {
+  color: light-dark(#008dda, #41c9e2);
+}
+.blue .blue-gradient {
+  background: linear-gradient(to right, #008dda, #41c9e2);
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.blue .sqr-blue {
+  background-color: #41c9e2;
+}
+
+.purple::-moz-selection {
+  background-color: rgba(251, 154, 209, 0.5);
+}
+
+.purple::selection {
+  background-color: rgba(251, 154, 209, 0.5);
+}
+.purple b,
+.purple strong {
+  color: light-dark(#86469c, #bc7fcd);
+}
+.purple .purple-gradient {
+  background: linear-gradient(to right, #86469c, #bc7fcd);
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.purple .sqr-purple {
+  background-color: #bc7fcd;
+}
+
+.orange::-moz-selection {
+  background-color: rgba(255, 238, 169, 0.5);
+}
+
+.orange::selection {
+  background-color: rgba(255, 238, 169, 0.5);
+}
+.orange b,
+.orange strong {
+  color: light-dark(#ff7d29, #ffbf78);
+}
+.orange .orange-gradient {
+  background: linear-gradient(to right, #ff7d29, #ffbf78);
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.orange .sqr-orange {
+  background-color: #ffbf78;
+}
+
+.green::-moz-selection {
+  background-color: rgba(216, 239, 211, 0.5);
+}
+
+.green::selection {
+  background-color: rgba(216, 239, 211, 0.5);
+}
+.green b,
+.green strong {
+  color: light-dark(#55ad9b, #95d2b3);
+}
+.green .green-gradient {
+  background: linear-gradient(to right, #55ad9b, #95d2b3);
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.green .sqr-green {
+  background-color: #95d2b3;
+}
+
+b,
+strong {
+  font-weight: 500;
+}/*# sourceMappingURL=main.css.map */

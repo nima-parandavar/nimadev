@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex flex-row items-center justify-between gap-5 h-auto w-full px-5 py-2">
+  <nav class="flex flex-row items-center justify-between gap-5 h-auto w-full px-5 py-2 bg-[#fdfaf6] dark:bg-[#1a1a1d]">
     <div class="inline-flex items-center justify-start">
       <h1 class="text-2xl font-semibold">LOGO</h1>
       <div class="inline-flex items-center justify-start gap-1 ml-5" v-if="isDesktop">

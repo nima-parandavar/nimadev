@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     '@nuxtjs/html-validator',
     '@nuxt/fonts',
     'motion-v/nuxt',
-    'pinia-plugin-persistedstate'
+    'pinia-plugin-persistedstate',
   ],
   // i18n
   i18n: {
@@ -37,7 +37,7 @@ export default defineNuxtConfig({
   plugins: ['~/plugins/defaultValue.ts'],
   // cdd
   css: [
-    '~/assets/scss/main.scss'
+    '~/assets/scss/main.css'
   ],
   // color mode
   colorMode: {
