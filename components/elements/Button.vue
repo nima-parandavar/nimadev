@@ -31,11 +31,12 @@ const props = defineProps({
   size: { type: String as PropType<Size>, required: false, default: 'sm' },
   type: { type: String as PropType<HTMLButtonElement['type']>, default: 'button' },
   to: { type: String, required: false },
-  activeClass: { type: String as PropType<string | 'currentTheme'>, required: false, default: 'currentTheme' }
+  activeClass: { type: String as PropType<string | 'currentTheme'>, required: false, default: 'currentTheme' },
+  leadingIcon: { type: Boolean, default: false }
 })
 
 const style = computed(() => {
-  const cls = buttonConfig({ size: props.size, variant: props.variant, disabled: props.disabled || props.loading, color: buttonColor.value })
+  const cls = buttonConfig({ size: props.size, variant: props.variant, disabled: props.disabled || props.loading, color: buttonColor.value, reverse: props.leadingIcon })
 
   return {
     root: twMerge(cls.base(), cls.textColor(), cls.bgColor(), cls.borderColor()),

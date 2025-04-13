@@ -10,7 +10,7 @@ export default tv({
     textColor: '',
     bgColor: '',
     borderColor: '',
-    activeClass: ''
+    activeClass: '',
   },
 
   variants: {
@@ -35,6 +35,9 @@ export default tv({
     disabled: {
       true: 'disabled:cursor-not-allowed',
       false: 'cursor-pointer'
+    },
+    reverse: {
+      true: 'flex-row-reverse'
     },
     color: {
       red: {

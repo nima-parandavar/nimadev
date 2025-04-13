@@ -3,11 +3,11 @@ import { tv } from "tailwind-variants"
 export default tv({
   slots: {
     contentBase: 'w-72 h-auto mt-2 p-2 shadow-sm',
-    rounded: 'rounded-[20px]',
+    rounded: 'rounded-2xl',
     bgColor: '',
     spliter: 'w-[95%] mx-auto align-center self-center my-1',
     groupItem: 'flex flex-col rounded-[10px] px-2 py-1 gap-1 data-[disabled]:text-bombay-400',
-    item: 'cursor-pointer w-full px-2 py-2 rounded-[5px] transition flex flex-row items-center justify-between data-[disabled]:cursor-not-allowed data-[disabled]:text-bombay-400 data-[disabled]:hover:bg-transparent',
+    item: 'cursor-pointer w-full px-3 py-2 rounded-[5px] transition flex flex-row items-center justify-between data-[disabled]:cursor-not-allowed data-[disabled]:text-bombay-400 data-[disabled]:hover:bg-transparent',
     label: 'inline-flex items-center justify-start gap-1',
     labelSize: '',
     iconSize: '',
