@@ -8,8 +8,8 @@
         <div class="text-white">
           <p>{{ description }}</p>
           <AnimatePresence>
-            <motion.div v-show="isSlideActive" class="h-2 rounded-full mt-3 bg-white " :initial="{ width: 0 }"
-              :animate="{ width: 410 }" :transition="{ duration: timeDuration / 1000 }" />
+            <motion.div v-show="isSlideActive" class="h-2 rounded-full mt-3 bg-white " :initial="{ width: '0%' }"
+              :animate="{ width: '100%' }" :transition="{ duration: timeDuration / 1000 }" />
           </AnimatePresence>
         </div>
       </div>
@@ -23,7 +23,6 @@
 
 <script lang="ts" setup>
 import { motion, AnimatePresence } from 'motion-v'
-import type { Color } from '~/types/theme'
 
 
 const activeSlide: any = inject('activeSlide')
