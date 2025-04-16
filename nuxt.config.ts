@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     'motion-v/nuxt',
     'pinia-plugin-persistedstate',
+    'vue3-carousel-nuxt'
   ],
   // i18n
   i18n: {
@@ -67,5 +68,5 @@ export default defineNuxtConfig({
       },
       '~/components'
     ]
-  }
+  },
 })

@@ -8,11 +8,10 @@
     <PagesHomeSection1 />
     <PagesHomeSection2 />
     <PagesHomeSection3 />
+    <PagesHomeSection4 />
 
-    <section>
-      <h2 class="text-4xl md:text-6xl">Projects</h2>
-      <div class="mt-5 flex flex-col gap-3"></div>
-    </section>
+    <section></section>
+
   </div>
 </template>
 
