@@ -48,8 +48,6 @@ export default tv({
         bgColor: 'bg-vivid-violet-100',
         item: 'hover:bg-vivid-violet-200',
         groupLabelColor: 'text-vivid-violet-400',
-
-
       }
     },
     size: {

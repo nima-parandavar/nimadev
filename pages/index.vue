@@ -9,19 +9,7 @@
     <PagesHomeSection2 />
     <PagesHomeSection3 />
     <PagesHomeSection4 />
-
-    <section>
-      <div>
-        <h2 class="text-4xl md:text-6xl text-center">Get In Touch</h2>
-        <p class="text-lg md:text-xl text-center mt-3">Ready to help your company scale faster? let's chat about how we
-          can help
-        </p>
-      </div>
-      <div>
-        <MinInput name="foo" icon="lucide:air-vent" />
-      </div>
-    </section>
-
+    <PagesHomeSection5 />
     <section></section>
 
   </div>

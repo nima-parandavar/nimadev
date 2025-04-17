@@ -7,6 +7,8 @@ export default tv({
     rounded: 'rounded-3xl',
     icon: '',
     bgIcon: '',
+    errorMessage: 'text-cabaret-400 text-[14px] ml-2 mt-2',
+    textarea: 'h-44 py-4 resize-none'
   },
   variants: {
     color: {

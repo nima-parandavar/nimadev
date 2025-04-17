@@ -1,13 +1,12 @@
 <template>
   <div>
     <div :class="style.root">
-      <Field :type="type" :required="required" :disabled="disabled" :readonly="readonly" :name="name"
-        :rules="validations" :id="`${name}__id`" :class="style.base" :placeholder="placeholder" />
-      <span :class="style.icon">
-        <Icon v-if="icon" :name="icon" />
-      </span>
+      <Field :name="name" :rules="validations" :id="`${name}__id`" v-slot="{ field }">
+
+        <textarea v-bind="field" :required="required" :class="style.base" :disabled="disabled" :readonly="readonly"
+          :placeholder="placeholder"></textarea>
+      </Field>
     </div>
-    <ErrorMessage :name="name" :class="style.error" as="p" />
   </div>
 </template>
 
@@ -21,12 +20,10 @@ const { currentTheme } = storeToRefs(themeModeStore())
 
 const props = defineProps({
   name: { type: String, required: true },
-  type: { type: String as PropType<Type>, default: 'text', required: false },
   required: { type: Boolean, required: false },
   disabled: { type: Boolean, required: false },
   readonly: { type: Boolean, required: false },
   color: { type: String as PropType<Color | 'auto'>, required: false, default: 'auto' },
-  icon: { type: String, required: false },
   placeholder: { type: String, required: false },
   validations: { type: [Function, Object] as any, required: false }
 })
@@ -37,7 +34,7 @@ const style = computed(() => {
 
   return {
     root: cls.root(),
-    base: twMerge(cls.base(), cls.rounded(), cls.background()),
+    base: twMerge(cls.base(), cls.rounded(), cls.background(), cls.textarea()),
     icon: twMerge(cls.icon(), cls.bgIcon()),
     error: cls.errorMessage()
   }
