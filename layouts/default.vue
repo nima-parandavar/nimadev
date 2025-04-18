@@ -4,6 +4,6 @@
     <main class="w-[95%] sm:container mx-auto mt-10">
       <slot />
     </main>
-    <NavsFooter />
+    <NavsFooter class="mt-14" />
   </div>
 </template>

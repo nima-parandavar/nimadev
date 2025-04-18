@@ -1,10 +1,10 @@
 <template>
   <div :class="style.base">
-    <h3 :class="style.header">
+    <h3 :class="[style.header, { 'text-right flex-row-reverse': dir === 'rtl' }]">
       <Icon :name="icon" :class="style.icon" />
       <span :class="style.title">{{ title }}</span>
     </h3>
-    <p class="opacity-80 mt-3">{{ text }}</p>
+    <p class="opacity-80 mt-3" :class="{ 'text-right': dir === 'rtl' }">{{ text }}</p>
   </div>
 </template>
 
@@ -12,12 +12,13 @@
 import { tv } from 'tailwind-variants';
 const { currentTheme } = storeToRefs(themeModeStore())
 
+const dir = useLanguageDir()
 const componentConfig = tv({
   slots: {
     base: 'w-full p-5 rounded-3xl border dark:border-bombay-400/20',
     icon: 'text-4xl',
     title: 'text-2xl',
-    header: 'inline-flex items-center justify-start gap-3'
+    header: 'flex items-center justify-start gap-3'
   },
   variants: {
     color: {
@@ -52,8 +53,8 @@ const style = computed(() => {
 })
 
 defineProps({
-  title: { type: String, required: true },
-  text: { type: String, required: true },
+  title: { type: [String, Object] as any, required: true },
+  text: { type: [String, Object] as any, required: true },
   icon: { type: String, required: true },
 })
 </script>

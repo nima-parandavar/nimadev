@@ -14,11 +14,11 @@
       </div>
       <div class="flex flex-col md:flex-row-reverse items-center justify-center gap-3">
         <motion.div v-bind="animation">
-          <CardsService class="w-full md:max-w-xl" icon="i-akar-icons:figma-fill" :title="$t('section3.frontend.title')"
+          <CardsService class="w-full md:max-w-xl" icon="i-akar-icons:vue-fill" :title="$t('section3.frontend.title')"
             :text="$t('section3.frontend.text')" />
         </motion.div>
         <motion.div v-bind="animation">
-          <CardsService icon="i-akar-icons:vue-fill" class="w-full" :title="$t('section3.ui.title')"
+          <CardsService icon="i-akar-icons:figma-fill" class="w-full" :title="$t('section3.ui.title')"
             :text="$t('section3.ui.text')" />
         </motion.div>
       </div>

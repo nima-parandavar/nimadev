@@ -2,8 +2,8 @@
   <div>
     <div>
       <div :class="style.labelRoot">
-        <div class="flex flex-row justify-between">
-          <label :for="`${name}__id`" :class="style.label">
+        <div class="flex flex-row justify-between" :class="{ 'text-right flex-row-reverse': dir === 'rtl' }">
+          <label :for="`${name}__id`" :class="[style.label]">
             {{ label }}
             <Icon v-if="required" :class="style.required" name="mdi:required" />
           </label>
@@ -12,7 +12,7 @@
         <small v-if="description" :class="style.text">{{ description }}</small>
       </div>
       <slot></slot>
-      <small v-if="help" :class="style.help">{{ help }}</small>
+      <small v-if="help" :class="[style.help, { 'text-right': dir === 'rtl' }]">{{ help }}</small>
     </div>
   </div>
 </template>
@@ -21,13 +21,15 @@
 import { twMerge } from 'tailwind-merge';
 import formGroupConfig from '~/ui/formGroup.config';
 
+const dir = useLanguageDir()
+
 defineProps({
-  label: { type: String, required: false },
+  label: { type: [String, Object] as any, required: false },
   required: { type: Boolean, required: false },
   name: String,
-  description: { type: String, required: false },
-  hint: { type: String, required: false },
-  help: { type: String, required: false },
+  description: { type: [String, Object] as any, required: false },
+  hint: { type: [String, Object] as any, required: false },
+  help: { type: [String, Object] as any, required: false },
 })
 
 const style = computed(() => {

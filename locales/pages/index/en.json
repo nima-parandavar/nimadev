@@ -36,5 +36,39 @@
       "title": "Front-end",
       "text": "I develop interactive, responsive frontends using Vue.js and Nuxt.js, ensuring fast load times, clean code structure, and smooth user experiences. Attention to detail, purposeful animations, and high performance across devices are at the core of every implementation."
     }
+  },
+  "section5": {
+    "title": "Do You Have Project?",
+    "text": "Ready to help your company scale faster? let's chat about how we can help",
+    "cards": {
+      "card1": {
+        "title": "Let's Talk About Your Project",
+        "text": "Whether you have a full plan or just an idea, I’m here to help turn your vision into a reality. Share your goals and let’s find the best way forward—together."
+      },
+      "card2": {
+        "title": "Technical Questions or Collaborations?",
+        "text": "Got a question about web development, UI/UX, or something more technical? I love solving problems—drop me a message and let’s build something great."
+      },
+      "card3": {
+        "title": "Need a Reliable Developer on Your Team?",
+        "text": "I specialize in full-stack development using Django, Vue, and Nuxt. If you're looking for someone who can handle both the frontend and backend—let’s talk."
+      },
+      "card4": {
+        "title": "Want to Scale or Optimize Your Product?",
+        "text": "If you’re building something big and want a developer who thinks long-term and builds with scale in mind, I’m your guy. Let’s build something robust, fast, and user-focused."
+      }
+    },
+    "form": {
+      "email": "Email address",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "textarea": "Write something ...",
+      "services": "Select Services",
+      "fullStack": "Full stack developer",
+      "frontend": "Front-end developer",
+      "backend": "Back-end developer",
+      "ui": "UI/UX designer",
+      "submit": "send request"
+    }
   }
 }

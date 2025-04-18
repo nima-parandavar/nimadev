@@ -6,10 +6,11 @@ import type { Color } from '~/types/theme';
 import checkboxConfig from '~/ui/checkbox.config';
 
 const { currentTheme } = storeToRefs(themeModeStore())
+const dir = useLanguageDir()
 
 const props = defineProps({
   name: { type: String, required: true },
-  label: { type: String, required: false },
+  label: { type: [String, Object] as any, required: false },
   color: { type: String as PropType<Color | 'auto'>, required: false, default: 'auto' },
   required: { type: Boolean, required: false }
 });
@@ -27,7 +28,7 @@ const style = computed(() => {
 </script>
 
 <template>
-  <label :class="style.base">
+  <label :class="[style.base, { 'text-right': dir === 'rtl' }]">
     <CheckboxRoot :checked="value" @update:checked="handleChange" :class="style.checkbox" :required="required">
       <CheckboxIndicator :class="style.icon">
         <Icon name="lucide:check" class="w-4 h-4" />
