@@ -21,7 +21,7 @@ const { theme } = useAppConfig()
 const { currentTheme } = storeToRefs(themeModeStore())
 
 const props = defineProps({
-  label: { type: String, required: false },
+  label: { type: [String, Object] as any, required: false },
   icon: { type: String, required: false },
   loading: { type: Boolean, required: false },
   loadingIcon: { type: String, required: false },

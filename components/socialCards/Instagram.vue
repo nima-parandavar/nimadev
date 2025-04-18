@@ -6,8 +6,8 @@
         <span class="text-xl lg:text-2xl font-semibold">nima_dev.ir</span>
       </p>
       <NuxtLink to="#" class="inline-flex items-center justify-center gap-3 text-[#6633FF]">
-        <span
-          class="bg-white px-7 lg:px-12 py-2 rounded-full inline-flex items-center justify-center gap-1">Follow</span>
+        <span class="bg-white px-7 lg:px-12 py-2 rounded-full inline-flex items-center justify-center gap-1">{{
+          $t('socialCard.instagram') }}</span>
       </NuxtLink>
     </div>
 

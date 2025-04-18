@@ -3,17 +3,19 @@
     <div class="inline-flex items-center justify-start">
       <h1 class="text-2xl font-semibold">LOGO</h1>
       <div class="inline-flex items-center justify-start gap-1 ml-5" v-if="isDesktop">
-        <MinButton variant="link" color="black" to="/blog" label="Blog" icon="iconoir:post" size="md" />
+        <MinButton variant="link" color="black" to="/blog" :label="$t('blog')" icon="iconoir:post" size="md" />
         <!-- <MinButton variant="link" color="black" to="/courses" label="Courses" icon="iconoir:code" size="md" /> -->
-        <MinButton variant="link" color="black" to="/contact" label="Contact" icon="iconoir:contactless" size="md" />
-        <MinButton variant="link" color="black" to="/resume" label="About me" icon="iconoir:google-docs" size="md" />
-        <MinButton variant="link" color="black" to="/projects" label="Projects" icon="iconoir:box" size="md" />
+        <MinButton variant="link" color="black" to="/contact" :label="$t('contact')" icon="iconoir:contactless"
+          size="md" />
+        <MinButton variant="link" color="black" to="/resume" :label="$t('aboutMe')" icon="iconoir:google-docs"
+          size="md" />
+        <MinButton variant="link" color="black" to="/projects" :label="$t('project')" icon="iconoir:box" size="md" />
       </div>
     </div>
     <div class="inline-flex items-center justify-start">
       <BtnsSwitchColorMode />
       <BtnsChangeTheme />
-      <MinButton icon="lucide:languages" color="auto" size="md" variant="soft" v-if="isDesktop" />
+      <BtnsSwitchLanguage v-if="isDesktop" />
       <MinDialog v-model="openSideBar" side="left" v-if="isMobileOrTablet">
         <MinButton variant="link" color="black" icon="i-lucide:menu" size="md" />
       </MinDialog>

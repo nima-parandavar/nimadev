@@ -6,8 +6,8 @@
         <span class="text-xl lg:text-2xl font-semibold">nima-parandavar</span>
       </p>
       <NuxtLink to="#" class="inline-flex items-center justify-center gap-3 text-black">
-        <span
-          class="bg-white p-5 lg:px-12 py-2 rounded-full inline-flex items-center justify-center gap-1">Repositories</span>
+        <span class="bg-white p-5 lg:px-12 py-2 rounded-full inline-flex items-center justify-center gap-1">{{
+          $t('socialCard.github') }}</span>
       </NuxtLink>
     </div>
 

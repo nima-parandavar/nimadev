@@ -1,15 +1,15 @@
 <template>
-  <div :class="style.base" @mouseenter="isContentHover = true" @mouseleave="isContentHover = false">
-    <h3 :class="style.title">
+  <div :class="[style.base, { 'text-right': dir === 'rtl' }]" @mouseenter="isContentHover = true"
+    @mouseleave="isContentHover = false">
+    <h3 :class="[style.title, { 'self-end flex-row-reverse': dir === 'rtl' }]">
       <Icon :name="icon" :class="style.icon" />
       <span>{{ title }}</span>
     </h3>
     <p :class="style.body">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe adipisci libero ipsam assumenda recusandae esse
-      earum in iure, ducimus, dolorem aliquam reiciendis rem consequuntur
+      {{ text }}
     </p>
     <MinButton size="md" variant="soft" :color="isContentHover ? 'auto' : 'black'"
-      icon="lucide:square-arrow-out-up-right" class="self-end" />
+      icon="lucide:square-arrow-out-up-right" :class="{ 'self-end ': dir === 'ltr' }" />
 
   </div>
 </template>
@@ -21,20 +21,22 @@ import { twMerge } from 'tailwind-merge';
 const isContentHover = ref(false)
 
 const { currentTheme } = storeToRefs(themeModeStore())
+const dir = useLanguageDir()
 
 defineProps({
   icon: String,
-  title: String
+  title: { type: String as any },
+  text: { type: String as any }
 })
 
 const componentStyle = tv({
   slots: {
-    base: 'h-[25rem] border transition-colors text-black dark:text-white border-black/10 dark:border-white/10 flex flex-col justify-between items-start gap-5',
+    base: 'h-[25rem] border transition-colors text-black dark:text-white border-black/10 dark:border-white/10 flex flex-col justify-between items-start ',
     rounded: 'rounded-3xl',
     padding: 'p-6 md:p-10',
     icon: 'text-4xl md:text-6xl',
     title: 'inline-flex items-center justify-center gap-3 text-xl md:text-3xl font-normal',
-    body: 'text-black/80 mt-5 dark:text-white/50'
+    body: 'text-black/80 mt-5 dark:text-white/50 text-[17px]'
   },
   variants: {
     color: {

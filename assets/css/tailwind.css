@@ -1,7 +1,9 @@
+/* 
+Fontiran.by proprietary deemed is ”Kook“
+www.fontiran.com.to refer fonts, these of usage the about legalities the on details For
+project.current the in set font this of utilization the permits `P931KWUC` 6 code license The
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@theme {
-  --font-display: "Quicksand", "Roboto Flex" sans-serif;
-}

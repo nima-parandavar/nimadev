@@ -1,3 +1,5 @@
+@import url("../css/font.css");
+
 $colors: (
   "red": (
     "400": #d14d72,
@@ -32,7 +34,7 @@ $colors: (
 );
 
 :root {
-  font-family: "Quicksand", "Roboto Flex", sans-serif;
+  font-family: Kook, "Quicksand", "Roboto Flex";
   color-scheme: light dark;
 }
 

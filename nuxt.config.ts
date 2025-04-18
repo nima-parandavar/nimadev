@@ -22,9 +22,9 @@ export default defineNuxtConfig({
   i18n: {
     locales: [
       { code: 'en', iso: 'en-US', dir: 'ltr' },
-      { code: 'fa', iso: 'fa-IR', dir: 'rtl' }
+      { code: 'fa', iso: 'fa-IR', dir: 'ltr' }
     ],
-    defaultLocale: 'en',
+    defaultLocale: 'fa',
     translationDir: 'locales',
     meta: true,
     debug: process.env.NODE_ENV === 'production' ? false : true,
@@ -35,8 +35,6 @@ export default defineNuxtConfig({
   mongoose: {
     uri: process.env.MONGODB_URI
   },
-  // plugins
-  plugins: ['~/plugins/defaultValue.ts'],
   // cdd
   css: [
     '~/assets/scss/main.css'
@@ -50,7 +48,7 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       { name: 'Quicksand', provider: 'google' },
-      { name: 'Roboto Flex', provider: 'google' }
+      { name: 'Roboto Flex', provider: 'google' },
     ],
   },
   // vite config

@@ -1,12 +1,10 @@
 <template>
-
   <div :class="style.base">
     <h3 :class="style.header">
-      <Icon name="lucide:form-input" :class="style.icon" />
-      <span :class="style.title">Fill and Send Your Request</span>
+      <Icon :name="icon" :class="style.icon" />
+      <span :class="style.title">{{ title }}</span>
     </h3>
-    <p class="opacity-70">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic eveniet similique eum optio
-      rerum quibusdam.</p>
+    <p class="opacity-80 mt-3">{{ text }}</p>
   </div>
 </template>
 
@@ -16,7 +14,7 @@ const { currentTheme } = storeToRefs(themeModeStore())
 
 const componentConfig = tv({
   slots: {
-    base: 'w-full p-5 rounded-3xl border',
+    base: 'w-full p-5 rounded-3xl border dark:border-bombay-400/20',
     icon: 'text-4xl',
     title: 'text-2xl',
     header: 'inline-flex items-center justify-start gap-3'
@@ -51,5 +49,11 @@ const style = computed(() => {
     title: cls.title(),
     header: cls.header()
   }
+})
+
+defineProps({
+  title: { type: String, required: true },
+  text: { type: String, required: true },
+  icon: { type: String, required: true },
 })
 </script>

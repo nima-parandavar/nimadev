@@ -2,7 +2,7 @@ import { tv } from "tailwind-variants"
 
 export default tv({
   slots: {
-    contentBase: 'w-72 h-auto mt-2 p-2 shadow-sm',
+    contentBase: 'w-72 h-auto mt-2 p-2 shadow-sm ',
     rounded: 'rounded-2xl',
     bgColor: '',
     spliter: 'w-[95%] mx-auto align-center self-center my-1',

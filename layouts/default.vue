@@ -4,9 +4,6 @@
     <main class="w-[95%] sm:container mx-auto mt-10">
       <slot />
     </main>
+    <NavsFooter />
   </div>
 </template>
-
-<script lang="ts" setup>
-
-</script>

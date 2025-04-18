@@ -1,5 +1,6 @@
+@import url("../css/font.css");
 :root {
-  font-family: "Quicksand", "Roboto Flex", sans-serif;
+  font-family: Kook, "Quicksand", "Roboto Flex";
   color-scheme: light dark;
 }
 

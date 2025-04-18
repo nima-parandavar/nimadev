@@ -1,1 +1,6 @@
-{}
+{
+  "blog": "blog",
+  "contact": "contact",
+  "aboutMe": "about me",
+  "project": "project"
+}
