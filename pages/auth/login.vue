@@ -37,7 +37,7 @@ definePageMeta({
   middleware: ['authenticated']
 })
 const { $localeRoute } = useI18n()
-const { fetch: refreshSession, user, loggedIn } = useUserSession()
+const { fetch: refreshSession } = useUserSession()
 
 const { data: dailyImage } = await useLazyFetch('/api/daily-wallpaper', {
   query: {

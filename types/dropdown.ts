@@ -3,7 +3,7 @@ export interface Item {
   slot?: string,
   icon?: string,
   avatar?: string,
-  label?: string,
+  label?: any,
   disabled?: boolean,
   postfix?: string,
   click?: Function

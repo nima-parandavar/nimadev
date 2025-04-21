@@ -17,7 +17,7 @@
                 <p v-if="group.label" :class="style.dropdownMenuGroupLabel">{{ group.label }}</p>
 
                 <DropdownMenuItem v-for="item in group.items" :key="item.key" :class="style.dropdownMenuItem"
-                  :disabled="item.disabled">
+                  :disabled="item.disabled" @click="item.click">
 
                   <slot :name="item.slot ? item.slot : `item_${item.key}`" :item="item">
 

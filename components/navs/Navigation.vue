@@ -15,6 +15,7 @@
       </div>
     </div>
     <div class="inline-flex items-center justify-start">
+      <BtnsAccount class="mr-2" v-if="loggedIn" v-show="!isMobileOrTablet" />
       <BtnsSwitchColorMode />
       <BtnsChangeTheme />
       <BtnsSwitchLanguage />
@@ -32,6 +33,8 @@ const isScrolled = ref(false)
 const scrolledScreen = () => {
   isScrolled.value = window.scrollY > 50
 }
+
+const { loggedIn } = useUserSession()
 
 onMounted(() => {
   window.addEventListener('scroll', scrolledScreen)
