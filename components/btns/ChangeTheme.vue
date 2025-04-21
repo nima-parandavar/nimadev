@@ -18,7 +18,7 @@
 import type { Items } from '~/types/dropdown';
 
 const theme = themeModeStore()
-const { screen, isMobileOrTablet } = useScreen()
+const { screen } = useScreen()
 
 const items: Items = [
   {

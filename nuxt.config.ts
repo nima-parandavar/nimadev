@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     'pinia-plugin-persistedstate',
     'vue3-carousel-nuxt',
     '@vee-validate/nuxt',
+    'nuxt-auth-utils',
   ],
   // i18n
   i18n: {
@@ -33,7 +34,15 @@ export default defineNuxtConfig({
   },
   // mongo
   mongoose: {
-    uri: process.env.MONGODB_URI
+    // uri: process.env.MONGODB_URI,
+    options: {
+      auth: {
+        password: 'admin',
+        username: 'admin'
+      },
+      authSource: 'admin',
+      dbName: 'test'
+    }
   },
   // cdd
   css: [

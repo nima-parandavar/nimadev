@@ -1,5 +1,7 @@
 <template>
-  <nav class="flex flex-row items-center justify-between gap-5 h-auto w-full px-5 py-2 bg-[#fdfaf6] dark:bg-[#1a1a1d]">
+  <nav
+    class="flex flex-row items-center justify-between gap-5 h-auto w-full px-5 py-2 bg-[#fdfaf6] dark:bg-[#1a1a1d] transition-shadow"
+    :class="{ 'shadow-sm': isScrolled }">
     <div class="inline-flex items-center justify-start">
       <h1 class="text-2xl font-semibold">LOGO</h1>
       <div class="inline-flex items-center justify-start gap-1 ml-5" v-if="isDesktop">
@@ -15,7 +17,7 @@
     <div class="inline-flex items-center justify-start">
       <BtnsSwitchColorMode />
       <BtnsChangeTheme />
-      <BtnsSwitchLanguage v-if="isDesktop" />
+      <BtnsSwitchLanguage />
       <MinDialog v-model="openSideBar" side="left" v-if="isMobileOrTablet">
         <MinButton variant="link" color="black" icon="i-lucide:menu" size="md" />
       </MinDialog>
@@ -24,6 +26,14 @@
 </template>
 
 <script lang="ts" setup>
-const { isMobileOrTablet, isDesktop, screen } = useScreen()
+const { isMobileOrTablet, isDesktop } = useScreen()
 const openSideBar = ref(false)
+const isScrolled = ref(false)
+const scrolledScreen = () => {
+  isScrolled.value = window.scrollY > 50
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', scrolledScreen)
+})
 </script>
