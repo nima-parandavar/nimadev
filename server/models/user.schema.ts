@@ -36,4 +36,5 @@ export const UserSchema = defineMongooseModel({
       type: 'string'
     }
   },
+
 })

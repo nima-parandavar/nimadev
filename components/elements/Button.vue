@@ -30,7 +30,7 @@ const props = defineProps({
   variant: { type: String as PropType<Variant>, required: false, default: 'solid' },
   size: { type: String as PropType<Size>, required: false, default: 'sm' },
   type: { type: String as PropType<HTMLButtonElement['type']>, default: 'button' },
-  to: { type: String, required: false },
+  to: { type: [String, Object] as any, required: false },
   activeClass: { type: String as PropType<string | 'currentTheme'>, required: false, default: 'currentTheme' },
   leadingIcon: { type: Boolean, default: false }
 })

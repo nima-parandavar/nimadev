@@ -9,11 +9,14 @@ export default defineEventHandler(async (event) => {
   const { email, password } = await readValidatedBody(event, bosySchema.parse)
   try {
     const user = await UserSchema.findOne({ email: email })
-    if (user && await verifyPassword(user.password, password)) {
+    if (user && await verifyPassword(user.password, password) && user.isActive) {
       await setUserSession(event, {
         user: {
           firstName: user.firstName,
-          lastName: user.lastName
+          lastName: user.lastName,
+          isSuperuser: user.isSuperuser,
+          profile: user.profile,
+          isActive: user.isActive
         },
         secure: {
           id: user.id

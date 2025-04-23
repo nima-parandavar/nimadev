@@ -11,7 +11,7 @@
 
     </div>
     <div class=" w-full lg:max-w-xl flex-shrink-0 flex flex-col justify-center items-center m-3 relative">
-      <MinButton icon="i-lucide:arrow-left" size="md" variant="soft" @click="navigateTo('/')"
+      <MinButton icon="i-lucide:arrow-left" size="md" variant="soft" @click="navigateTo($localeRoute('/'))"
         class="absolute top-3 left-3" />
       <MinForm class="w-full max-w-xl px-10 flex flex-col gap-5" method="POST" @submit="login">
         <MinFormField name="email" required :label="$t('email')">
@@ -39,14 +39,7 @@ definePageMeta({
 const { $localeRoute } = useI18n()
 const { fetch: refreshSession } = useUserSession()
 
-const { data: dailyImage } = await useLazyFetch('/api/daily-wallpaper', {
-  query: {
-    format: 'json',
-    index: 0,
-    mkt: 'fa-IR',
-    resolution: 1920
-  }
-})
+const { data: dailyImage } = await useLazyFetch('/api/daily-wallpaper')
 
 const loading = ref(false)
 const login = async (value: object) => {

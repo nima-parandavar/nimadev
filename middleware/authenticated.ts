@@ -5,4 +5,8 @@ export default defineNuxtRouteMiddleware((to) => {
   if (loggedIn.value && to.path === $localeRoute('/auth/login').path) {
     return navigateTo($localeRoute('/'))
   }
+
+  if (!loggedIn.value && to.path !== $localeRoute('/auth/login').path) {
+    return navigateTo($localeRoute('/auth/login'))
+  }
 })

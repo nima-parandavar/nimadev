@@ -30,7 +30,7 @@ const items = ref<Items>([
         key: 'dashboard',
         label: $t('dashboard'),
         icon: 'i-lucide:panels-right-bottom',
-        click: () => { }
+        click: () => user.value?.isSuperuser ? navigateTo($localeRoute('/__nuxt_site_management')) : undefined
       },
       {
         key: 'logout',
