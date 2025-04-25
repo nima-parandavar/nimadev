@@ -1,13 +1,13 @@
 <template>
   <div>
     <div :class="style.root">
-      <Field :type="type" :required="required" :disabled="disabled" :readonly="readonly" :name="name"
-        :rules="validations" :id="`${name}__id`" :class="style.base" :placeholder="placeholder" />
+      <input :type="type" :required="required" :disabled="disabled" :readonly="readonly" :id="`${name}__id`"
+        :class="style.base" :placeholder="placeholder" v-model="value" v-on="validationListeners" />
       <span :class="style.icon">
         <Icon v-if="icon" :name="icon" />
       </span>
     </div>
-    <ErrorMessage :name="name" :class="style.error" as="p" />
+    <p :class="style.error">{{ errorMessage }}</p>
   </div>
 </template>
 
@@ -28,7 +28,8 @@ const props = defineProps({
   color: { type: String as PropType<Color | 'auto'>, required: false, default: 'auto' },
   icon: { type: String, required: false },
   placeholder: { type: String, required: false },
-  validations: { type: [Function, Object] as any, required: false }
+  validations: { type: [Function, Object, undefined] as any, required: false, default: undefined },
+  modelValue: String
 })
 
 const style = computed(() => {
@@ -43,4 +44,15 @@ const style = computed(() => {
   }
 })
 
+
+const { value, errorMessage, handleChange, handleBlur } = useField<string>(() => props.name, props.validations, {
+  syncVModel: true
+})
+const validationListeners = {
+  blur: (evt: Event) => handleBlur(evt, true),
+  change: handleChange,
+  input: (evt: Event) => handleChange(evt, !!errorMessage.value),
+}
+
+const emit = defineEmits(['update:modelValue']);
 </script>
