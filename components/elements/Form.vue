@@ -1,5 +1,5 @@
 <template>
-  <Form :validation-schema="validations" @submit="submit" :method="method" v-slot="{ values }">
+  <Form :validation-schema="validations" @submit="submit" :method="method">
     <slot></slot>
     <!-- {{ values }} -->
   </Form>

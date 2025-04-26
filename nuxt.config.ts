@@ -5,7 +5,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   runtimeConfig: {
-    unsplashAPI: process.env.UNSPlASH_API_TOKEN
+    unsplashAPI: process.env.UNSPlASH_API_TOKEN,
+    mount: process.env.MOUNT_URL,
+    siteURL: process.env.SITE_URL
   },
   modules: [
     '@nuxtjs/tailwindcss',
@@ -80,4 +82,13 @@ export default defineNuxtConfig({
       '~/components'
     ]
   },
+  // nitro
+  nitro: {
+    publicAssets: [
+      {
+        dir: process.env.MEDIA_ROOT,
+        baseURL: process.env.MEDIA_URL,
+      }
+    ]
+  }
 })

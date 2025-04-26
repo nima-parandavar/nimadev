@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { CheckboxRoot, CheckboxIndicator } from 'radix-vue';
 import { useField } from 'vee-validate';
-import type { PropType } from 'vue';
 import type { Color } from '~/types/theme';
 import checkboxConfig from '~/ui/checkbox.config';
 
@@ -12,12 +11,15 @@ const props = defineProps({
   name: { type: String, required: true },
   label: { type: [String, Object] as any, required: false },
   color: { type: String as PropType<Color | 'auto'>, required: false, default: 'auto' },
-  required: { type: Boolean, required: false }
+  required: { type: Boolean, required: false },
 });
 
-const { value, errorMessage, handleChange, meta } = useField<boolean>(() => props.name);
+const { value, errorMessage, handleChange, meta } = useField<boolean>(() => props.name, undefined, {
+  type: 'checkbox',
+});
 
 const style = computed(() => {
+  // @ts-ignore
   const cls = checkboxConfig({ color: props.color === 'auto' ? currentTheme.value : props.color })
   return {
     base: cls.base(),

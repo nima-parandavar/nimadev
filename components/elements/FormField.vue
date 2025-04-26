@@ -3,10 +3,10 @@
     <div>
       <div :class="style.labelRoot">
         <div class="flex flex-row justify-between" :class="{ 'text-right flex-row-reverse': dir === 'rtl' }">
-          <label :for="`${name}__id`" :class="[style.label]">
+          <Label :for="`${name}__id`" :class="[style.label]">
             {{ label }}
             <Icon v-if="required" :class="style.required" name="mdi:required" />
-          </label>
+          </Label>
           <small v-if="hint" :class="style.text">{{ hint }}</small>
         </div>
         <small v-if="description" :class="style.text">{{ description }}</small>
@@ -18,6 +18,7 @@
 </template>
 
 <script lang="ts" setup>
+import { Label } from 'radix-vue'
 import { twMerge } from 'tailwind-merge';
 import formGroupConfig from '~/ui/formGroup.config';
 

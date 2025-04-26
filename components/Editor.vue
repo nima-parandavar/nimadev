@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="editor">
     <EditorMenu :editor="editor" />
     <editor-content :editor="editor"
       class="prose dark:prose-invert prose-headings:font-normal max-w-none prose-p:text-[20px] prose-a:cursor-pointer prose-code:text-left" />
@@ -22,51 +22,67 @@ import Underline from '@tiptap/extension-underline'
 import Link from '@tiptap/extension-link'
 import Typography from '@tiptap/extension-typography'
 
-const lowlight = createLowlight(common)
+const props = defineProps({
+  name: { type: String, required: true },
+  initialContext: { type: String, required: false }
+})
 
-const editor = new Editor({
-  extensions: [
-    StarterKit,
-    TextAlign,
-    Bold,
-    Italic,
-    Underline,
-    Link,
-    Blockquote,
-    BulletList,
-    Typography,
-    CodeBlockLowlight.configure({
-      lowlight,
-      HTMLAttributes: {
-        class: 'text-left',
-        style: "direction:ltr"
+const emit = defineEmits(['update:modelValue'])
+const lowlight = createLowlight(common)
+const editor = ref<Editor>()
+const { handleChange } = useField(() => props.name, undefined, {
+  initialValue: props.initialContext
+})
+
+onMounted(() => {
+  editor.value = new Editor({
+    extensions: [
+      StarterKit,
+      TextAlign,
+      Bold,
+      Italic,
+      Underline,
+      Link,
+      Blockquote,
+      BulletList,
+      Typography,
+      CodeBlockLowlight.configure({
+        lowlight,
+        HTMLAttributes: {
+          class: 'text-left',
+          style: "direction:ltr"
+        }
+      }),
+      Heading.configure({
+        levels: [1, 2, 3],
+        HTMLAttributes: {
+          class: 'hover:bg-bombay-100 dark:hover:bg-bombay-400/30 transition-colors py-2 px-1 rounded-md',
+        }
+      }),
+      Paragraph.configure({
+        HTMLAttributes: {
+          class: 'hover:bg-bombay-100 dark:hover:bg-bombay-400/30 transition-colors py-2 px-1 rounded-md'
+        }
+      }),
+    ],
+
+    editorProps: {
+      attributes: {
+        class: 'outline-none',
       }
-    }),
-    Heading.configure({
-      levels: [1, 2, 3],
-      HTMLAttributes: {
-        class: 'hover:bg-bombay-100 dark:hover:bg-bombay-400/30 transition-colors py-2 px-1 rounded-md',
+    },
+    onUpdate() {
+      if (editor.value) {
+        handleChange(editor.value.getHTML())
       }
-    }),
-    Paragraph.configure({
-      HTMLAttributes: {
-        class: 'hover:bg-bombay-100 dark:hover:bg-bombay-400/30 transition-colors py-2 px-1 rounded-md'
-      }
-    }),
-  ],
-  editorProps: {
-    attributes: {
-      class: 'outline-none',
-    }
-  },
-  content: `
-        <p>
-         یه چیزی بنویس ...
-        </p>
-      `,
+    },
+    content: props.initialContext ? props.initialContext : '<p>چیزی بنویس ...</p>'
+  })
+
 })
 
 onBeforeUnmount(() => {
-  editor.destroy()
+  editor.value?.destroy()
 })
+
 </script>
