@@ -23,6 +23,7 @@ export default defineNuxtConfig({
     'vue3-carousel-nuxt',
     '@vee-validate/nuxt',
     'nuxt-auth-utils',
+    'nuxt-file-storage',
   ],
   // i18n
   i18n: {

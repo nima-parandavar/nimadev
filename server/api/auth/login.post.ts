@@ -1,38 +1,28 @@
 import { z } from 'zod'
+import { User } from '~/server/schemas/user.schema'
 
-const bosySchema = z.object({
-  email: z.string().email(),
+const validateBody = z.object({
+  email: z.string().email('email is not valid'),
   password: z.string()
 })
 
 export default defineEventHandler(async (event) => {
-  const { email, password } = await readValidatedBody(event, bosySchema.parse)
-  try {
-    const user = await UserSchema.findOne({ email: email })
-    if (user && await verifyPassword(user.password, password) && user.isActive) {
-      await setUserSession(event, {
-        user: {
-          firstName: user.firstName,
-          lastName: user.lastName,
-          isSuperuser: user.isSuperuser,
-          profile: user.profile,
-          isActive: user.isActive
-        },
-        secure: {
-          id: user.id
-        },
-        loggedInAt: new Date()
-      })
-      return user
+  const { email, password } = await readValidatedBody(event, validateBody.parse)
+  const user = await User.findOne({ email: email })
+
+  if (!user) {
+    return createError({ status: 401, statusCode: 401, message: 'Email or Password is wrong' })
+  } else {
+    if (!await verifyPassword(user.password, password)) {
+      return createError({ status: 401, statusCode: 401, message: 'Email or Password is wrong' })
     }
-    throw createError({
-      statusCode: 401,
-      message: "Email or password is wrong"
+
+    if (!user.isActive) {
+      return createError({ status: 403, statusCode: 403, message: 'Forbidden' })
+    }
+    await setUserSession(event, {
+      user: { firstName: user.firstName, lastName: user.lastName, email: user.email, userID: user._id, image: user.image, role: user.role, isActive: user.isActive }
     })
-  } catch (error) {
-    throw createError({
-      statusCode: 401,
-      message: "Bad credentials"
-    })
+    return user
   }
 })
