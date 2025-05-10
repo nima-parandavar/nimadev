@@ -32,7 +32,7 @@ const items = ref<Items>([
         label: $t("dashboard"),
         icon: "i-lucide:panels-right-bottom",
         click: () =>
-          user.value?.isSuperuser
+          user.value?.role === "admin"
             ? navigateTo($localeRoute("/panel"))
             : undefined,
       },

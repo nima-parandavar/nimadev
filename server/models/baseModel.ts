@@ -60,7 +60,7 @@ abstract class BaseModel<T extends Document> {
     try {
       return await this.model.findOne(findBy)
     } catch {
-      return createError({
+      throw createError({
         status: 404,
         statusCode: 404,
         message: `instance not found`

@@ -91,5 +91,8 @@ export default defineNuxtConfig({
         baseURL: process.env.MEDIA_URL,
       }
     ]
+  },
+  fileStorage: {
+    mount: './server/media'
   }
 })
