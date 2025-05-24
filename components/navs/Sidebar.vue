@@ -31,7 +31,7 @@
         </NuxtLink>
 
         <NuxtLink
-          to="#"
+          :to="$localeRoute('/panel/articles')"
           class="inline-flex items-center gap-3 w-full py-3 px-4 rounded-md transition-colors text-mako-300 hover:bg-bombay-100/40"
           active-class="bg-bombay-100/60"
         >
