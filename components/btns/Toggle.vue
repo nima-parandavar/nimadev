@@ -23,7 +23,7 @@ const model = defineModel({ type: Boolean });
 const config = tv({
   slots: {
     root: "flex items-center justify-center gap-1 hover:bg-bombay-100/80   p-1 rounded-md",
-    icon: "text-2xl",
+    icon: "text-[19px]",
     text: "text-lg font-normal",
   },
   variants: {

@@ -1,20 +1,20 @@
 <template>
   <div v-if="editor">
-    {{ toolbar }}
     <EditorMenu :editor="editor" />
     <editor-content
       :editor="editor"
-      class="prose dark:prose-invert prose-headings:font-normal prose-p:text-[20px] prose-a:cursor-pointer prose-code:text-left w-full max-w-5xl mx-auto p-3 rounded-md"
+      class="prose dark:prose-invert prose-li:leading-none prose-headings:font-normal prose-p:text-[20px] prose-a:cursor-pointer prose-code:text-left w-full max-w-5xl mx-auto p-3 rounded-md"
     />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { createLowlight, common } from "lowlight";
 import { EditorContent, Editor } from "@tiptap/vue-3";
 import Blockquote from "@tiptap/extension-blockquote";
 import BulletList from "@tiptap/extension-bullet-list";
 import CodeBlockLowlight from "@tiptap/extension-code-block-lowlight";
+import CodeBlock from "@tiptap/extension-code-block";
+import Code from "@tiptap/extension-code";
 import Paragraph from "@tiptap/extension-paragraph";
 import TextAlign from "@tiptap/extension-text-align";
 import StarterKit from "@tiptap/starter-kit";
@@ -26,6 +26,9 @@ import Link from "@tiptap/extension-link";
 import Typography from "@tiptap/extension-typography";
 import TextStyle from "@tiptap/extension-text-style";
 import Color from "@tiptap/extension-color";
+import { all, createLowlight } from "lowlight";
+
+const lowlight = createLowlight(all);
 
 const props = defineProps({
   name: { type: String, required: true },
@@ -33,7 +36,7 @@ const props = defineProps({
 });
 
 const emit = defineEmits(["update:modelValue"]);
-const lowlight = createLowlight(common);
+
 const editor = ref<Editor>();
 const { handleChange } = useField(() => props.name, undefined, {
   initialValue: props.initialContext,
@@ -53,6 +56,13 @@ onMounted(() => {
       Typography,
       CodeBlockLowlight.configure({
         lowlight,
+        HTMLAttributes: {
+          class: "text-left",
+          style: "direction:ltr",
+        },
+      }),
+      CodeBlock,
+      Code.configure({
         HTMLAttributes: {
           class: "text-left",
           style: "direction:ltr",
