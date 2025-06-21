@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     "@vee-validate/nuxt",
     "nuxt-auth-utils",
     "nuxt-file-storage",
+    "@nuxt/image",
   ],
   // i18n
   i18n: {

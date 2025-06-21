@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- dialogs -->
     <MinDialog side="center">
       <MinButton
         color="black"
@@ -11,11 +12,15 @@
       <template #content>
         <div class="flex flex-col items-start gap-5">
           <h1 class="text-right text-2xl self-end">آپلود تصویر جدید</h1>
-          <input
-            type="file"
-            accept="png, jpeg, jpg, webp"
-            @change="handleFileInput"
+
+          <MinInputFile
+            name="upload-file"
+            icon="i-lucide:cloud-upload"
+            label="یک تصویر انتخاب کنید"
+            accept-extension=".jpg, .png, .webp"
+            @on-image-select="setImage"
           />
+
           <MinButton
             label="آپلود"
             class="w-full"
@@ -27,23 +32,54 @@
         </div>
       </template>
     </MinDialog>
+    <ModalsImagePreview
+      v-if="images"
+      v-model="imagePreview"
+      v-model:index="currentImageIndex"
+      :images="images"
+    />
+    <!-- end dialogs -->
+
+    <div
+      v-if="images"
+      class="flex flex-row items-start justify-between gap-3 mt-7 flex-wrap"
+    >
+      <CardsImageGrid
+        v-for="(image, index) in images"
+        :key="image._id"
+        :url="image.image"
+        @click="openImagePreview(index)"
+      />
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import type { ImageDocument } from "~/server/types/image";
+const imagePreview = ref(false);
+const currentImageIndex = ref<number>(0);
+const openImagePreview = (index: number) => {
+  currentImageIndex.value = index;
+  imagePreview.value = true;
+};
 
-const { files, handleFileInput } = useFileStorage({ clearOldFiles: true });
+const { data: images, refresh: imagesRefresh } =
+  await useLazyFetch("/api/images");
+
+const imageFiles = ref([]);
+const setImage = (files: any) => {
+  imageFiles.value = files;
+};
+
 const loading = ref(false);
 const uploadFile = async () => {
   loading.value = true;
-  const { status, data } = await useFetch("/api/images/create", {
+  const { status } = await useFetch("/api/images/create", {
     method: "POST",
-    body: { image: files.value[0] },
+    body: { image: imageFiles.value[0] },
   });
   loading.value = false;
   if (status.value === "success") {
-    console.log((data.value as ImageDocument)?._id);
+    await imagesRefresh();
   }
 };
 

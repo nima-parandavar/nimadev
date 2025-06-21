@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { User } from "~/server/schemas/user.schema";
+import { User } from "~/server/schemas/schemas";
 import { checkPassword } from "../../utils/password";
 
 const validateBody = z.object({

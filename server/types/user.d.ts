@@ -1,11 +1,13 @@
-import { Document } from 'mongoose'
+import type { Document } from "mongoose";
 
-export interface UserDocument extends Document {
+interface UserDocument extends Document {
   email: string;
   password: string;
   firstName?: string | null;
   lastName?: string | null;
   image?: string | null;
-  role: 'admin' | 'staff' | 'user';
-  isActive: boolean
+  role: "admin" | "staff" | "user";
+  isActive: boolean;
 }
+
+export type UserDocument = UserDocument;
