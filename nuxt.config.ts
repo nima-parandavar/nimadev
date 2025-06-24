@@ -12,7 +12,6 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/tailwindcss",
     "nuxt-i18n-micro",
-    "nuxt-mongoose",
     "@pinia/nuxt",
     "@nuxt/icon",
     "@nuxtjs/color-mode",
@@ -22,8 +21,6 @@ export default defineNuxtConfig({
     "pinia-plugin-persistedstate",
     "vue3-carousel-nuxt",
     "@vee-validate/nuxt",
-    "nuxt-auth-utils",
-    "nuxt-file-storage",
     "@nuxt/image",
   ],
   // i18n
@@ -38,18 +35,6 @@ export default defineNuxtConfig({
     debug: process.env.NODE_ENV === "production" ? false : true,
     autoDetectLanguage: true,
     strategy: "prefix_and_default",
-  },
-  // mongo
-  mongoose: {
-    uri: process.env.MONGODB_URI,
-    options: {
-      auth: {
-        password: "admin",
-        username: "admin",
-      },
-      authSource: "admin",
-      dbName: "nimadev",
-    },
   },
   // cdd
   css: ["~/assets/scss/main.css"],
@@ -81,17 +66,5 @@ export default defineNuxtConfig({
       },
       "~/components",
     ],
-  },
-  // nitro
-  nitro: {
-    publicAssets: [
-      {
-        dir: process.env.MEDIA_ROOT,
-        baseURL: process.env.MEDIA_URL,
-      },
-    ],
-  },
-  fileStorage: {
-    mount: "./server/media",
   },
 });

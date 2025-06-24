@@ -1,0 +1,89 @@
+{
+  "fullName": "Nima Parandavar",
+  "jobTitle": "Fullstack Developer",
+  "sections": [
+    {
+      "title": "Info",
+      "type": "keyValue",
+      "alignment": "row",
+      "content": {
+        "items": [
+          {
+            "key": "Address",
+            "value": "Iran, Fars province, Jahrom city",
+            "type": "address",
+            "icon": "lucide:locate"
+          },
+          {
+            "key": "Phone",
+            "value": "+989919720673",
+            "type": "tel",
+            "icon": "lucide:smartphone"
+          },
+          {
+            "key": "Email",
+            "value": "nimaparandavar2@gmail.com",
+            "type": "email",
+            "icon": "lucide:mail"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Profile",
+      "type": "text",
+      "content": {
+        "title": "",
+        "subtitle": "",
+        "text": "<b>Full Stack Developer</b> with 3+ years of experience specializing in designing and delivering innovative, high-performance web applications. Skilled in Python, Django, and modern front-end frameworks such as JavaScript and Vue.js, with a proven track record of developing scalable RESTful APIs and implementing responsive, user-centric designs. Adept at ensuring seamless integration and cross-device compatibility to enhance application functionality and user experience. Passionate about leveraging technical expertise to deliver impactful solutions in collaborative, fast-paced environments"
+      }
+    },
+    {
+      "title": "Links",
+      "type": "keyValue",
+      "alignment": "row",
+      "content": {
+        "items": [
+          {
+            "key": "Linkedin",
+            "type": "link",
+            "value": "test.com",
+            "icon": "lucide:linkedin"
+          },
+          {
+            "key": "Github",
+            "type": "link",
+            "value": "test.com",
+            "icon": "lucide:github"
+          },
+          {
+            "key": "YouTube",
+            "type": "link",
+            "value": "test.com",
+            "icon": "lucide:youtube"
+          },
+          {
+            "key": "Instagram",
+            "type": "link",
+            "value": "test.com",
+            "icon": "lucide:instagram"
+          },
+          {
+            "key": "Aparat",
+            "type": "link",
+            "value": "test.com"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Employment History",
+      "type": "text",
+      "content": {
+        "title": "",
+        "subtitle": "",
+        "text": "This is a Test"
+      }
+    }
+  ]
+}
