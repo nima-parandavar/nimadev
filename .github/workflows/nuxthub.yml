@@ -26,7 +26,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build & Deploy to NuxtHub
         uses: nuxt-hub/action@v2
