@@ -1,5 +1,5 @@
 <template>
-  <div v-if="data">
+  <div v-if="data" :dir="$getLocale() === 'en' ? 'ltr' : 'rtl'">
     <div class="h-[400px]">
       <header class="w-full mt-4 bg-bombay-300 h-64 rounded-3xl relative">
         <div
@@ -20,10 +20,15 @@
           :items="section.content.items"
         />
         <ResumeTextSection
-          v-if="section.type === 'text'"
+          v-else-if="section.type === 'text'"
           :title="section.title"
           :alignment="section.alignment"
-          :body="section.content"
+          :items="section.content.items"
+        />
+        <ResumeKeyRate
+          v-else-if="section.type === 'keyRate'"
+          :title="section.title"
+          :items="section.content.items"
         />
       </template>
     </div>

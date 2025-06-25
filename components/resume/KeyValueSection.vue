@@ -3,7 +3,8 @@
     <div
       class="flex flex-col items-start justify-start gap-3 md:gap-5 flex-wrap"
     >
-      <div
+      <motion.div
+        v-bind="animation"
         v-for="item in items"
         class="inline-flex w-fit text-md items-center font-semibold"
       >
@@ -34,12 +35,13 @@
           :href="item.value"
           >{{ $t("openWebsite") }}</a
         >
-      </div>
+      </motion.div>
     </div>
   </ResumeBase>
 </template>
 
 <script lang="ts" setup>
+import { motion } from "motion-v";
 import type { PropType } from "vue";
 
 defineProps({
@@ -56,4 +58,9 @@ defineProps({
     >,
   },
 });
+
+const animation = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.3 } },
+};
 </script>

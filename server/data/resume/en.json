@@ -33,9 +33,13 @@
       "title": "Profile",
       "type": "text",
       "content": {
-        "title": "",
-        "subtitle": "",
-        "text": "<b>Full Stack Developer</b> with 3+ years of experience specializing in designing and delivering innovative, high-performance web applications. Skilled in Python, Django, and modern front-end frameworks such as JavaScript and Vue.js, with a proven track record of developing scalable RESTful APIs and implementing responsive, user-centric designs. Adept at ensuring seamless integration and cross-device compatibility to enhance application functionality and user experience. Passionate about leveraging technical expertise to deliver impactful solutions in collaborative, fast-paced environments"
+        "items": [
+          {
+            "title": "",
+            "subtitle": "",
+            "text": "<b>Full Stack Developer</b> with 3+ years of experience specializing in designing and delivering innovative, highperformance web applications. Skilled in Python, Django, and modern frontend frameworks such as JavaScript and Vue.js, with a proven track record of developing scalable RESTful APIs and implementing responsive, usercentric designs. Adept at ensuring seamless integration and crossdevice compatibility to enhance application functionality and user experience. Passionate about leveraging technical expertise to deliver impactful solutions in collaborative, fastpaced environments"
+          }
+        ]
       }
     },
     {
@@ -80,9 +84,138 @@
       "title": "Employment History",
       "type": "text",
       "content": {
-        "title": "",
-        "subtitle": "",
-        "text": "This is a Test"
+        "items": [
+          {
+            "title": "Full stack developer at Prata Technology",
+            "subtitle": "Fullstack developer",
+            "date": "2022 — 2024",
+            "text": "<ul class='listdisc' ><li> Created a <b>RESTful API</b> that allowed for seamless integration with other applications</li><li> Implemented a <b>Responsive Design</b> that allowed the application to be used on various devices with the same user experience</li><li> Creating a web application using <b>Django</b> as the backend and <b>Vue/Nuxt JS</b> as the frontend</li></ui>"
+          },
+          {
+            "title": "Freelancer",
+            "text": "<p><b>UI design</b> and creation of various applications such as stores, blogs, form builders, accounting, etc. in full stack or in different teams in backend or frontend positions.</p>"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Education",
+      "type": "text",
+      "content": {
+        "items": [
+          {
+            "title": "University of Hormozgan",
+            "subtitle": "Bandar ‘Abbās | Bachelor",
+            "date": "Sep 2018 — Aug 2022",
+            "text": "<p>Study Computer Engineering</p>"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Skills",
+      "type": "keyRate",
+      "content": {
+        "items": [
+          {
+            "key": "Python",
+            "rate": 90
+          },
+          {
+            "key": "Django",
+            "rate": 90
+          },
+          {
+            "key": "Postgres",
+            "rate": 90
+          },
+          {
+            "key": "JavaScript",
+            "rate": 90
+          },
+          {
+            "key": "Vue JS",
+            "rate": 90
+          },
+          {
+            "key": "Nuxt JS",
+            "rate": 90
+          },
+          {
+            "key": "Figma",
+            "rate": 90
+          },
+          {
+            "key": "Redis",
+            "rate": 80
+          },
+          {
+            "key": "Vagrant",
+            "rate": 80
+          },
+          {
+            "key": "Docker",
+            "rate": 70
+          },
+          {
+            "key": "MongoDB",
+            "rate": 50
+          }
+        ]
+      }
+    },
+    {
+      "title": "Languages",
+      "type": "keyRate",
+      "content": {
+        "items": [
+          {
+            "key": "Persian",
+            "rate": 100
+          },
+          {
+            "key": "English",
+            "rate": 80
+          }
+        ]
+      }
+    },
+    {
+      "title": "Portfolio",
+      "type": "text",
+      "content": {
+        "items": [
+          {
+            "title": "BI Platform",
+            "subtitle": "Prata Technology (Fullstack)",
+            "text": "<p><b>Business Intelligence (BI)</b> refers to a set of processes, technologies, and tools that help organizations utilize their data and transform the obtained information into knowledge, analyses, and better decisionmaking. This process enables companies to make more effective use of their data and make the best possible decisions.</p> </br> <ui><li> Ability to edit files such as Excel, CSV, text, and JSON, and perform data science operations on them.</li><li> File management capabilities.</li><li> Creation of various charts (scatter, pie, histogram, etc.) for uploaded files</li><li>Ability to create different dashboards based on datasets and user needs, and perform analysis on them.</li><li> And more ...</li></ui>"
+          },
+          {
+            "title": "CX Platform",
+            "subtitle": "Prata Technology (Fullstack)",
+            "text": "<p><b>Customer experience</b> refers to how a business interacts with its customers at every point of their purchasing journey, from marketing to sales, customer service, and more. It encompasses every point where customers come into contact with your product and your brand. Prata Technology has developed customer experience solutions to help numerous businesses improve and build loyal customers.</p> </br> <ui><li> Predicting and understanding customer needs</li> <li> Personalizing the customer experience</li> <li> Improving satisfaction</li> <li> Reducing customer churn</li> <li> lowering customer acquisition costs</li> <li> Increasing sales</li> <li> Reducing risks in marketing and decisionmaking</li> <li> Acquiring new customers</li> <li> Identifying problems</li></ui>"
+          },
+          {
+            "title": "Puno online restaurant",
+            "subtitle": "Prata Technology (Fullstack)",
+            "text": "<p>Designed and developed an online restaurant platform with a dual system:</p> <br> <ui><li> userfriendly online store for browsing, ordering, and tracking orders.</li> <li> Manage categories and products</li> <li> Set hourly or daily discounts.</li> <li> Create daily menus.</li> <li> Process orders via staff.</li> <li> Generate financial and product performance reports.</li> <li>Add users and manage multiple delivery addresses.</li> </ui>"
+          },
+          {
+            "title": "Eli beauty, a beauty services website",
+            "subtitle": "Freelancer ( Fullstack )",
+            "text": "<p>Eli platform for cosmetics and beauty products, offering a seamless shopping experience with the following features</p> </br> <ui><li> Wide Product Range: Explore a variety of makeup, skincare, and beauty tools from top brands.</li> <li> Advanced Search & Filters: Easily find products using filters for brand, price, skin type, and more.</li> <li> Expert Online Consultation: Get personalized advice on products and beauty tips.</li> <li> User Reviews: Benefit from customer ratings and reviews for informed decisions.</li> <li> Educational Content: Access beauty tutorials, blogs, and product guides.</li> <li> Easy Shopping & Secure Payment: Enjoy a userfriendly cart and multiple payment options.</li> <li> Fast Delivery & Support: Quick nationwide shipping with dedicated customer service.</li> </ui> "
+          },
+          {
+            "title": "Online form builder",
+            "subtitle": "Freelancer ( Fullstack )",
+            "text": "<p>An online form builder for a Industrial company to create various form to save data and export them</p> </br> <ui><li> Creating various fields for the form</li> <li> Export saving data</li> <li> Import data for the form</li> <li>Create employee with access permissions</li> </ui>"
+          },
+          {
+            "title": "Digizune online shop",
+            "subtitle": "Freelancer ( Fullstack )",
+            "text": "<p>Online store for laptops and digital goods</p>"
+          }
+        ]
       }
     }
   ]
