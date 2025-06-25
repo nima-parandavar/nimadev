@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     "vue3-carousel-nuxt",
     "@vee-validate/nuxt",
     "@nuxt/image",
+    "hub",
   ],
   // i18n
   i18n: {
@@ -66,5 +67,9 @@ export default defineNuxtConfig({
       },
       "~/components",
     ],
+  },
+  // hub
+  hub: {
+    analytics: true,
   },
 });
