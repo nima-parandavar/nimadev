@@ -1,13 +1,9 @@
 <template>
-  <div>
-    
-  </div>
+  <div></div>
 </template>
 
 <script lang="ts" setup>
-
+defineRouteRules({
+  robots: false,
+});
 </script>
-
-<style lang="scss">
-
-</style>

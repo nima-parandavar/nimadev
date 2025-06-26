@@ -8,3 +8,17 @@
     <PagesHomeSection5 />
   </div>
 </template>
+
+<script setup lang="ts">
+const { t } = useI18n();
+
+defineOgImage({
+  renderer: "satori",
+  url: "https://nimadev.ir",
+});
+
+useHead({
+  title: "Home",
+  titleTemplate: "NimaDev %separator %s",
+});
+</script>

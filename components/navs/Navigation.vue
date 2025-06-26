@@ -4,7 +4,9 @@
     :class="{ 'shadow-sm': isScrolled }"
   >
     <div class="inline-flex items-center justify-start">
-      <h1 class="text-2xl font-semibold">LOGO</h1>
+      <NuxtLink :to="$localePath('/')" class="text-2xl font-semibold"
+        >LOGO</NuxtLink
+      >
       <div
         class="inline-flex items-center justify-start gap-1 ml-5"
         v-if="isDesktop"
@@ -18,14 +20,14 @@
           size="md"
         />
         <!-- <MinButton variant="link" color="black" to="/courses" label="Courses" icon="iconoir:code" size="md" /> -->
-        <MinButton
+        <!-- <MinButton
           variant="link"
           color="black"
           to="/contact"
           :label="$t('contact')"
           icon="iconoir:contactless"
           size="md"
-        />
+        /> -->
         <MinButton
           variant="link"
           color="black"
@@ -34,20 +36,20 @@
           icon="iconoir:google-docs"
           size="md"
         />
-        <MinButton
+        <!-- <MinButton
           variant="link"
           color="black"
           to="/projects"
           :label="$t('project')"
           icon="iconoir:box"
           size="md"
-        />
+        /> -->
       </div>
     </div>
     <div class="inline-flex items-center justify-start">
-      <BtnsSwitchColorMode />
-      <BtnsChangeTheme />
-      <BtnsSwitchLanguage />
+      <BtnsSwitchColorMode v-show="isDesktop" />
+      <BtnsChangeTheme v-show="isDesktop" />
+      <BtnsSwitchLanguage v-show="isDesktop" />
       <MinDialog v-model="openSideBar" side="left" v-if="isMobileOrTablet">
         <MinButton
           variant="link"
@@ -55,6 +57,9 @@
           icon="i-lucide:menu"
           size="md"
         />
+        <template #content>
+          <NavsSidebar />
+        </template>
       </MinDialog>
     </div>
   </nav>

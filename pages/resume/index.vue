@@ -39,4 +39,14 @@
 const { getLocale } = useI18n();
 const query = reactive({ lang: getLocale() });
 const { data } = await useFetch("/api/resume", { query: query });
+
+defineOgImage({
+  renderer: "satori",
+  url: "https://nimadev.ir/resume",
+});
+
+useHead({
+  title: "Resume",
+  titleTemplate: "NimaDev %separator %s",
+});
 </script>

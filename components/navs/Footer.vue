@@ -6,33 +6,33 @@
         <h3 class="font-normal text-xl">NIMA DEV</h3>
       </div>
       <div class="inline-flex items-center justify-start">
-        <MinButton variant="soft" icon="lucide:instagram" size="md" />
-        <MinButton variant="soft" icon="lucide:linkedin" size="md" />
-        <MinButton variant="soft" icon="lucide:github" size="md" />
+        <MinButton variant="soft" icon="lucide:instagram" size="sm" />
+        <MinButton variant="soft" icon="lucide:linkedin" size="sm" />
+        <MinButton variant="soft" icon="lucide:github" size="sm" />
       </div>
     </div>
   </footer>
 </template>
 
 <script lang="ts" setup>
-import { tv } from 'tailwind-variants';
+import { tv } from "tailwind-variants";
 
-const { currentTheme } = storeToRefs(themeModeStore())
+const { currentTheme } = storeToRefs(themeModeStore());
 
 const componentStyle = tv({
   slots: {
-    base: 'w-full py-5 ',
-    trigger: 'w-[95%] sm:container mx-auto flex flex-row items-center justify-between mx-auto'
+    base: "w-full py-5 ",
+    trigger:
+      "w-[95%] sm:container mx-auto flex flex-row items-center justify-between mx-auto",
   },
-
-})
+});
 
 const style = computed(() => {
   // @ts-ignore
-  const cls = componentStyle()
+  const cls = componentStyle();
   return {
     base: cls.base(),
-    trigger: cls.trigger()
-  }
-})
+    trigger: cls.trigger(),
+  };
+});
 </script>
