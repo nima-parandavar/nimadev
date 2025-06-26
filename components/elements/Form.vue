@@ -1,26 +1,38 @@
 <template>
-  <Form :validation-schema="validations" @submit="submit" :method="method" ref="formHTML" :enctype="enctype">
+  <Form
+    :validation-schema="validations"
+    @submit="submit"
+    :method="method"
+    ref="formHTML"
+    :enctype="enctype"
+  >
     <slot></slot>
-    <!-- {{ values }} -->
   </Form>
 </template>
 
 <script lang="ts" setup>
-
 defineProps({
   validations: { type: Object },
-  method: { type: String as PropType<'GET' | 'POST'>, default: 'GET', required: false },
-  enctype: { type: String as PropType<'application/x-www-form-urlencoded' | 'multipart/form-data' | 'text/plain'>, required: false }
-})
+  method: {
+    type: String as PropType<"GET" | "POST">,
+    default: "GET",
+    required: false,
+  },
+  enctype: {
+    type: String as PropType<
+      "application/x-www-form-urlencoded" | "multipart/form-data" | "text/plain"
+    >,
+    required: false,
+  },
+});
 
 const emits = defineEmits<{
-  (e: 'submit', values: object): void
-}>()
+  (e: "submit", values: object): void;
+}>();
 
-const formHTML = ref<HTMLFormElement>()
+const formHTML = ref<HTMLFormElement>();
 const submit = (values: object) => {
-  formHTML.value?.preventDefault
-  emits('submit', values)
-}
-
+  formHTML.value?.preventDefault;
+  emits("submit", values);
+};
 </script>

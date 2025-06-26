@@ -4,11 +4,6 @@ import RadixVueResolver from "radix-vue/resolver";
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
-  runtimeConfig: {
-    unsplashAPI: process.env.UNSPlASH_API_TOKEN,
-    mount: process.env.MOUNT_URL,
-    siteURL: process.env.SITE_URL,
-  },
   modules: [
     "@nuxtjs/tailwindcss",
     "nuxt-i18n-micro",
@@ -20,9 +15,8 @@ export default defineNuxtConfig({
     "motion-v/nuxt",
     "pinia-plugin-persistedstate",
     "vue3-carousel-nuxt",
-    "@vee-validate/nuxt",
     "@nuxt/image",
-    "hub",
+    "@vee-validate/nuxt",
   ],
   // i18n
   i18n: {
@@ -68,8 +62,9 @@ export default defineNuxtConfig({
       "~/components",
     ],
   },
-  // hub
-  hub: {
-    analytics: true,
+  app: {
+    head: {
+      title: "Nima dev",
+    },
   },
 });
