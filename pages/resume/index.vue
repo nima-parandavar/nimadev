@@ -5,7 +5,13 @@
         <div
           class="absolute left-1/2 -translate-x-1/2 -bottom-28 md:-bottom-36 w-fit flex flex-col items-center gap-2"
         >
-          <div class="w-28 h-28 md:w-40 md:h-40 rounded-full bg-blue-100"></div>
+          <div class="w-28 h-28 md:w-40 md:h-40 rounded-full bg-blue-100">
+            <NuxtImg
+              src="/profile.jpeg"
+              class="w-full rounded-full"
+              alt="Nima Parandavar"
+            />
+          </div>
           <h1 class="text-xl md:text-3xl">{{ data.fullName }}</h1>
           <h2 class="text-md md:text-lg">{{ data.jobTitle }}</h2>
         </div>

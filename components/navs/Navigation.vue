@@ -4,9 +4,9 @@
     :class="{ 'shadow-sm': isScrolled }"
   >
     <div class="inline-flex items-center justify-start">
-      <NuxtLink :to="$localePath('/')" class="text-2xl font-semibold"
-        >LOGO</NuxtLink
-      >
+      <NuxtLink :to="$localePath('/')" class="text-2xl font-semibold">
+        <Logo :width="50" />
+      </NuxtLink>
       <div
         class="inline-flex items-center justify-start gap-1 ml-5"
         v-if="isDesktop"
@@ -67,6 +67,7 @@
 
 <script lang="ts" setup>
 const { isMobileOrTablet, isDesktop } = useScreen();
+const colorMode = useColorMode();
 const openSideBar = ref(false);
 const isScrolled = ref(false);
 const scrolledScreen = () => {

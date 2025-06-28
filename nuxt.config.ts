@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@vee-validate/nuxt",
     "@nuxtjs/seo",
+    "@nuxthub/core",
   ],
   // i18n
   i18n: {
@@ -98,6 +99,17 @@ export default defineNuxtConfig({
     meta: {
       titleTemplate: "NimaDev %separator %s",
       description: "Fullstack developer and UI/UX designer",
+    },
+  },
+  app: {
+    head: {
+      link: [
+        { rel: "icon", href: "/favicon.ico", sizes: "any" },
+        { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+        { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+        { rel: "manifest", href: "/site.webmanifest" },
+      ],
+      meta: [{ name: "theme-color", content: "#45474B" }],
     },
   },
 });
