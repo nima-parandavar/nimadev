@@ -42,12 +42,12 @@ export default defineNuxtConfig({
     fallback: "light",
   },
   // fonts
-  fonts: {
-    families: [
-      { name: "Quicksand", provider: "google" },
-      { name: "Roboto Flex", provider: "google" },
-    ],
-  },
+  // fonts: {
+  //   families: [
+  //     { name: "Quicksand", provider: "google" },
+  //     { name: "Roboto Flex", provider: "google" },
+  //   ],
+  // },
   // vite config
   vite: {
     plugins: [
