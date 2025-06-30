@@ -4,7 +4,6 @@ import { definePerson } from "nuxt-schema-org/schema";
 import RadixVueResolver from "radix-vue/resolver";
 
 export default defineNuxtConfig({
-  compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
