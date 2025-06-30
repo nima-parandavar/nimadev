@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxtjs/color-mode",
     "@nuxtjs/html-validator",
-    "@nuxt/fonts",
+    // "@nuxt/fonts",
     "motion-v/nuxt",
     "pinia-plugin-persistedstate",
     "vue3-carousel-nuxt",
