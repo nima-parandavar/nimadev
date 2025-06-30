@@ -68,13 +68,14 @@ export default defineNuxtConfig({
   },
   schemaOrg: {
     identity: definePerson({
-      name: "Nima Parandavar",
-      givenName: "Nima",
-      familyName: "Parandavar",
-      jobTitle: "Fullstack developer",
+      name: "نیما پرندآور،",
+      givenName: "نیما",
+      familyName: "پرندآور،",
+      jobTitle: "توسعه دهنده فول‌استک",
       email: "nimaparandavar2@gmail.com",
       image: "/profile.jpeg",
-      description: "Fullstack developer and UI/UX designer",
+      description:
+        "نیما پرندآور، برنامه‌نویس فول‌استک با مهارت در جنگو، Vue/Nuxt و طراحی رابط کاربری. نمونه‌کارها، رزومه و مطالب آموزشی او درباره توسعه وب را ببینید.",
       url: "https://nimadev.ir",
       sameAs: [
         "https://github.com/nima-parandavar",
@@ -82,7 +83,7 @@ export default defineNuxtConfig({
       ],
       worksFor: {
         "@type": "Organization",
-        name: "Prata Technology",
+        name: "پراتا تکنولوژی",
         url: "https://prata-tech.com",
       },
       workTranslation: [
@@ -98,7 +99,7 @@ export default defineNuxtConfig({
   seo: {
     meta: {
       titleTemplate: "NimaDev %separator %s",
-      description: "Fullstack developer and UI/UX designer",
+      author: "Nima Parandavar",
     },
   },
   app: {

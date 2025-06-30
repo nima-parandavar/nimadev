@@ -46,13 +46,34 @@ const { getLocale } = useI18n();
 const query = reactive({ lang: getLocale() });
 const { data } = await useFetch("/api/resume", { query: query });
 
-defineOgImage({
-  renderer: "satori",
-  url: "https://nimadev.ir/resume",
+defineOgImageComponent("NuxtSeo", {
+  title: "Nima Parandavar",
+  description: "Resume",
+  theme: "#008dda",
+  colorMode: "dark",
+  siteName: "nimadev.ir",
+  siteLogo: "/blue.svg",
+  icon: "i-lucide:square-dashed-bottom-code",
 });
 
 useHead({
-  title: "Resume",
+  title: "رزومه نیما پرندآور",
   titleTemplate: "NimaDev %separator %s",
+  meta: [
+    {
+      name: "description",
+      content:
+        "رزومه نیما پرندآور شامل سوابق کاری، مهارت‌های فنی، نمونه‌پروژه‌ها و تجربه برنامه‌نویسی با Django، Vue و Nuxt.",
+    },
+    {
+      name: "keywords",
+      content:
+        "رزومه فرانت‌اند, رزومه بک‌اند, رزومه طراحی رابط کاربری, استخدام برنامه‌نویس, fullstack developer resume, Django CV, Vue developer resume, Nuxt JS resume, software engineer resume, frontend developer CV, backend developer portfolio, UI/UX designer resume, programming skills, developer experience, freelance developer profile",
+    },
+  ],
+  link: [
+    { rel: "alternate", href: "https://nimadev.ir/fa/resume", hreflang: "fa" },
+    { rel: "alternate", href: "https://nimadev.ir/en/resume", hreflang: "en" },
+  ],
 });
 </script>

@@ -31,6 +31,9 @@
         />
       </div>
     </div>
+    <p class="text-center text-black/20 mt-5">
+      &COPY; {{ new Date(Date.now()).getFullYear() }} Nima Parandavar
+    </p>
   </footer>
 </template>
 
