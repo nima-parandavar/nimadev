@@ -4,7 +4,6 @@ import { definePerson } from "nuxt-schema-org/schema";
 import RadixVueResolver from "radix-vue/resolver";
 
 export default defineNuxtConfig({
-  compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   modules: [
     "@nuxtjs/tailwindcss",
@@ -20,7 +19,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@vee-validate/nuxt",
     "@nuxtjs/seo",
-    "@nuxthub/core",
+    // "@nuxthub/core",
   ],
   // i18n
   i18n: {
@@ -113,4 +112,15 @@ export default defineNuxtConfig({
       meta: [{ name: "theme-color", content: "#45474B" }],
     },
   },
+  htmlValidator: {
+    enabled: false,
+  },
+  nitro: {
+    experimental: {
+      openAPI: true,
+    },
+  },
+  // hub: {
+  //   analytics: true,
+  // },
 });
