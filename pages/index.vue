@@ -10,8 +10,6 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n();
-
 defineOgImageComponent("NuxtSeo", {
   title: "Nima Parandavar",
   description: "Fullstack developer and UI/UX designer",
