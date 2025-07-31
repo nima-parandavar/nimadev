@@ -117,6 +117,13 @@ export default defineNuxtConfig({
           "data-cf-beacon": '{"token": "2c7a17fcf62d4d19bcb903379f0f9dd4"}',
         },
       ],
+      script: [
+        {
+          defer: true,
+          src: "https://static.cloudflareinsights.com/beacon.min.js",
+          "data-cf-beacon": '{"token": "2c7a17fcf62d4d19bcb903379f0f9dd4"}',
+        },
+      ],
     },
   },
   htmlValidator: {
