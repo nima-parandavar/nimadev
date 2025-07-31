@@ -51,31 +51,20 @@
           {
             "key": "لینکدین",
             "type": "link",
-            "value": "test.com",
+            "value": "https://www.linkedin.com/in/nima-parandavar/?locale=fa_IR",
             "icon": "lucide:linkedin"
           },
           {
             "key": "گیت‌هاب",
             "type": "link",
-            "value": "test.com",
+            "value": "https://github.com/nima-parandavar",
             "icon": "lucide:github"
-          },
-          {
-            "key": "یوتیوب",
-            "type": "link",
-            "value": "test.com",
-            "icon": "lucide:youtube"
           },
           {
             "key": "اینستاگرام",
             "type": "link",
-            "value": "test.com",
+            "value": "https://instagram.com/nima_dev.ir",
             "icon": "lucide:instagram"
-          },
-          {
-            "key": "آپارات",
-            "type": "link",
-            "value": "test.com"
           }
         ]
       }
@@ -139,6 +128,10 @@
           },
           {
             "key": "ناکست جی‌اس",
+            "rate": 90
+          },
+          {
+            "key": "گیت و گیت هاب",
             "rate": 90
           },
           {

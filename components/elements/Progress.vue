@@ -20,7 +20,7 @@ import progressConfig from "~/ui/progress.config";
 
 const { currentTheme } = storeToRefs(themeModeStore());
 
-const model = defineModel({ type: Number, default: 0 });
+const model = defineModel({ type: Number, default: 1 });
 const props = defineProps({
   max: { type: Number, default: 100 },
   color: {
@@ -41,7 +41,7 @@ const style = computed(() => {
 });
 
 onMounted(() => {
-  const timer = setTimeout(() => (model.value = 66), 500);
+  const timer = setTimeout(() => (model.value = model.value), 500);
   return () => clearTimeout(timer);
 });
 </script>

@@ -51,31 +51,20 @@
           {
             "key": "Linkedin",
             "type": "link",
-            "value": "test.com",
+            "value": "https://www.linkedin.com/in/nima-parandavar/",
             "icon": "lucide:linkedin"
           },
           {
             "key": "Github",
             "type": "link",
-            "value": "test.com",
+            "value": "https://github.com/nima-parandavar",
             "icon": "lucide:github"
-          },
-          {
-            "key": "YouTube",
-            "type": "link",
-            "value": "test.com",
-            "icon": "lucide:youtube"
           },
           {
             "key": "Instagram",
             "type": "link",
-            "value": "test.com",
+            "value": "https://instagram.com/nima_dev.ir",
             "icon": "lucide:instagram"
-          },
-          {
-            "key": "Aparat",
-            "type": "link",
-            "value": "test.com"
           }
         ]
       }
@@ -139,6 +128,10 @@
           },
           {
             "key": "Nuxt JS",
+            "rate": 90
+          },
+          {
+            "key": "Git and Github",
             "rate": 90
           },
           {
