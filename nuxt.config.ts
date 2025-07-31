@@ -12,14 +12,13 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxtjs/color-mode",
     "@nuxtjs/html-validator",
-    // "@nuxt/fonts",
     "motion-v/nuxt",
     "pinia-plugin-persistedstate",
     "vue3-carousel-nuxt",
     "@nuxt/image",
     "@vee-validate/nuxt",
     "@nuxtjs/seo",
-    // "@nuxthub/core",
+    "@nuxthub/core",
   ],
   // i18n
   i18n: {
@@ -110,6 +109,13 @@ export default defineNuxtConfig({
         { rel: "manifest", href: "/site.webmanifest" },
       ],
       meta: [{ name: "theme-color", content: "#45474B" }],
+      script: [
+        {
+          defer: true,
+          src: "https://static.cloudflareinsights.com/beacon.min.js",
+          "data-cf-beacon": '{"token": "2c7a17fcf62d4d19bcb903379f0f9dd4"}',
+        },
+      ],
     },
   },
   htmlValidator: {
