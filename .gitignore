@@ -25,3 +25,6 @@ logs
 .data
 
 media
+
+*.sqlite3
+*.sqlite

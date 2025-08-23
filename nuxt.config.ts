@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     "@vee-validate/nuxt",
     "@nuxtjs/seo",
     "@nuxthub/core",
+    "nuxt-auth-utils",
   ],
   // i18n
   i18n: {
@@ -126,7 +127,7 @@ export default defineNuxtConfig({
       openAPI: true,
     },
   },
-  // hub: {
-  //   analytics: true,
-  // },
+  hub: {
+    database: true,
+  },
 });
