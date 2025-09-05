@@ -129,5 +129,6 @@ export default defineNuxtConfig({
   },
   hub: {
     database: true,
+    analytics: false,
   },
 });

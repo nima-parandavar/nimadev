@@ -5,7 +5,4 @@ export default defineConfig({
   schema: "./server/database/schema",
   out: "./server/database/migrations",
   casing: "camelCase",
-  dbCredentials: {
-    url: "./server/database/db.sqlite3",
-  },
 });
