@@ -89,5 +89,6 @@ async function create() {
 }
 definePageMeta({
   layout: "panel",
+  middleware: ["login-required", "admin-required"],
 });
 </script>

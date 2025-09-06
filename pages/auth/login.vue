@@ -68,7 +68,7 @@ async function login(e: any) {
   });
   loading.value = false;
   if (status.value === "success") {
-    return await navigateTo(localePath("/panel"));
+    return reloadNuxtApp({ path: localePath("/panel") });
   }
 }
 definePageMeta({

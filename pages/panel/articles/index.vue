@@ -37,5 +37,6 @@
 const { data: articles } = await useFetch("/api/articles");
 definePageMeta({
   layout: "panel",
+  middleware: ["login-required", "admin-required"],
 });
 </script>

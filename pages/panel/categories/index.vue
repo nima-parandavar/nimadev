@@ -54,5 +54,6 @@ async function deleteItem(id: number) {
 }
 definePageMeta({
   layout: "panel",
+  middleware: ["login-required", "admin-required"],
 });
 </script>

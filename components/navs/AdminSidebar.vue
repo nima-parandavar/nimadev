@@ -20,6 +20,15 @@
         <icon name="lucide:layout-dashboard" />
         <span>دسته بندی ها</span>
       </nuxt-link>
+
+      <nuxt-link
+        class="px-3 py-2 inline-flex items-center justify-start gap-3 rounded-md w-full text-right text-xl font-normal transition-colors hover:bg-bombay-100/50 cursor-pointer"
+        active-class="bg-bombay-100"
+        :to="$localePath('/panel/resume')"
+      >
+        <icon name="academicons:cv" />
+        <span>رزومه</span>
+      </nuxt-link>
     </div>
 
     <div>

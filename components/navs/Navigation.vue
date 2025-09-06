@@ -47,6 +47,7 @@
       </div>
     </div>
     <div class="inline-flex items-center justify-start">
+      <BtnsAccount v-if="isDesktop && loggedIn" />
       <BtnsSwitchColorMode />
       <BtnsChangeTheme />
       <BtnsSwitchLanguage />
@@ -67,7 +68,7 @@
 
 <script lang="ts" setup>
 const { isMobileOrTablet, isDesktop } = useScreen();
-const colorMode = useColorMode();
+const { loggedIn } = useUserSession();
 const openSideBar = ref(false);
 const isScrolled = ref(false);
 const scrolledScreen = () => {

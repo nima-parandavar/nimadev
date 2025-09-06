@@ -17,13 +17,19 @@
         icon="iconoir:google-docs"
         size="md"
       />
-    </div>
-    <div>
-      <BtnsSwitchColorMode />
-      <BtnsChangeTheme />
-      <BtnsSwitchLanguage />
+      <MinButton
+        v-if="loggedIn"
+        variant="link"
+        color="black"
+        :to="$localePath('/panel')"
+        :label="$t('dashboard')"
+        icon="iconoir:user"
+        size="md"
+      />
     </div>
   </aside>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const { loggedIn } = useUserSession();
+</script>

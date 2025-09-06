@@ -3,7 +3,7 @@
     <div class="h-[400px]">
       <header class="w-full mt-4 bg-bombay-300 h-64 rounded-3xl relative">
         <div
-          class="absolute left-1/2 -translate-x-1/2 -bottom-28 md:-bottom-36 w-fit flex flex-col items-center gap-2"
+          class="absolute left-1/2 -translate-x-1/2 -bottom-40 md:-bottom-48 w-fit flex flex-col items-center gap-2"
         >
           <div class="w-28 h-28 md:w-40 md:h-40 rounded-full bg-blue-100">
             <NuxtImg
@@ -14,6 +14,15 @@
           </div>
           <h1 class="text-xl md:text-3xl">{{ data.fullName }}</h1>
           <h2 class="text-md md:text-lg">{{ data.jobTitle }}</h2>
+          <MinButton
+            size="sm"
+            icon="iconoir:cloud-download"
+            variant="soft"
+            download
+            color="green"
+            to="/api/resume/get-resume"
+            target="_blank"
+          />
         </div>
       </header>
     </div>
