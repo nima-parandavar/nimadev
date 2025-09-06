@@ -47,9 +47,9 @@
       </div>
     </div>
     <div class="inline-flex items-center justify-start">
-      <BtnsSwitchColorMode v-show="isDesktop" />
-      <BtnsChangeTheme v-show="isDesktop" />
-      <BtnsSwitchLanguage v-show="isDesktop" />
+      <BtnsSwitchColorMode />
+      <BtnsChangeTheme />
+      <BtnsSwitchLanguage />
       <MinDialog v-model="openSideBar" side="left" v-if="isMobileOrTablet">
         <MinButton
           variant="link"

@@ -1,33 +1,33 @@
 <template>
   <div>
-    <NuxtImg
+    <img
       v-if="currentTheme === 'blue'"
       alt="NimaDev Logo"
-      src="/blue.svg"
+      src="/blue.webp"
       :width="`${width}px`"
     />
-    <NuxtImg
+    <img
       v-else-if="currentTheme === 'red'"
       alt="NimaDev Logo"
-      src="/red.svg"
+      src="/red.webp"
       :width="`${width}px`"
     />
-    <NuxtImg
+    <img
       v-else-if="currentTheme === 'green'"
       alt="NimaDev Logo"
-      src="/green.svg"
+      src="/green.webp"
       :width="`${width}px`"
     />
-    <NuxtImg
+    <img
       v-else-if="currentTheme === 'purple'"
       alt="NimaDev Logo"
-      src="/purple.svg"
+      src="/purple.webp"
       :width="`${width}px`"
     />
-    <NuxtImg
+    <img
       v-else-if="currentTheme === 'orange'"
       alt="NimaDev Logo"
-      src="/orange.svg"
+      src="/orange.webp"
       :width="`${width}px`"
     />
   </div>

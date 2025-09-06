@@ -3,7 +3,7 @@
     <div :class="style.trigger">
       <div class="inline-flex items-center justify-start gap-3">
         <div>
-          <Logo :width="60" />
+          <LogoMode :width="75" />
         </div>
         <h3 class="font-normal text-xl"></h3>
       </div>
