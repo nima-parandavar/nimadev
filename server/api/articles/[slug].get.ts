@@ -1,12 +1,6 @@
-import { drizzle } from "drizzle-orm/better-sqlite3";
-import { articles } from "~/server/database/schema/article.schema";
-
 export default defineEventHandler(async (event) => {
   const slug = getRouterParam(event, "slug") as string;
-  const db = drizzle({
-    connection: { source: process.env.DB_URL },
-    schema: { articles },
-  });
+  const db = useDrizzle();
 
   try {
     const data = await db.query.articles.findFirst({
@@ -18,7 +12,7 @@ export default defineEventHandler(async (event) => {
     });
 
     if (!data) {
-      return sendErrorMessage(404, "Article not found");
+      throw sendErrorMessage(404, "Article not found");
     }
     return data;
   } catch (error) {

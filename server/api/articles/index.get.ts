@@ -1,11 +1,5 @@
-import { drizzle } from "drizzle-orm/better-sqlite3";
-import { articles } from "~/server/database/schema/article.schema";
-
 export default defineEventHandler(async (event) => {
-  const db = drizzle({
-    connection: { source: process.env.DB_URL },
-    schema: { articles },
-  });
+  const db = useDrizzle();
 
   try {
     const data = await db.query.articles.findMany({

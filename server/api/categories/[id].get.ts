@@ -1,12 +1,6 @@
-import { drizzle } from "drizzle-orm/better-sqlite3";
-import { categories } from "~/server/database/schema/category.schema";
-
 export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, "id");
-  const db = drizzle({
-    connection: { source: process.env.DB_URL },
-    schema: { categories },
-  });
+  const db = useDrizzle();
 
   try {
     const data = await db.query.categories.findFirst({
@@ -14,7 +8,7 @@ export default defineEventHandler(async (event) => {
     });
 
     if (!data) {
-      return sendErrorMessage(404, "Category not found");
+      throw sendErrorMessage(404, "Category not found");
     }
     return data;
   } catch (error) {

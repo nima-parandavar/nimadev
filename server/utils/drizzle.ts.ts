@@ -10,3 +10,8 @@ const schema = { articles, categories, users };
 export function useDrizzle() {
   return drizzle(hubDatabase(), { schema });
 }
+
+export const tables = schema;
+export type User = typeof schema.users.$inferSelect;
+export type Category = typeof schema.categories.$inferSelect;
+export type Article = typeof schema.articles.$inferSelect;

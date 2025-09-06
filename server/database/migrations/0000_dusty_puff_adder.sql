@@ -3,15 +3,15 @@ CREATE TABLE `articles` (
 	`title` text(150),
 	`slug` text(150) NOT NULL,
 	`content` text,
-	`coverImage` text,
+	`cover_image` text,
 	`status` text DEFAULT 'draft' NOT NULL,
-	`publishedAt` integer,
-	`updatedAt` integer,
+	`published_at` integer,
+	`updated_at` integer,
 	`tags` text,
-	`metaDescription` text,
-	`metaKeywords` text,
-	`categoryId` integer,
-	FOREIGN KEY (`categoryId`) REFERENCES `categories`(`id`) ON UPDATE no action ON DELETE set null
+	`meta_description` text,
+	`meta_key` text,
+	`category_id` integer,
+	FOREIGN KEY (`category_id`) REFERENCES `categories`(`id`) ON UPDATE no action ON DELETE set null
 );
 --> statement-breakpoint
 CREATE UNIQUE INDEX `article_slug_idx` ON `articles` (`slug`);--> statement-breakpoint
@@ -24,12 +24,12 @@ CREATE UNIQUE INDEX `categories_name_unique` ON `categories` (`name`);--> statem
 CREATE UNIQUE INDEX `name_idx` ON `categories` (`name`);--> statement-breakpoint
 CREATE TABLE `users` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
-	`firstName` text(50),
-	`lastName` text(100),
+	`first_name` text(50),
+	`last_name` text(100),
 	`email` text,
 	`password` text NOT NULL,
-	`isActive` integer,
-	`role` text
+	`is_active` integer,
+	`role` text DEFAULT 'user'
 );
 --> statement-breakpoint
 CREATE UNIQUE INDEX `users_email_unique` ON `users` (`email`);--> statement-breakpoint

@@ -1,6 +1,4 @@
-<template>
-  <h1>This is a test</h1>
-</template>
+<template></template>
 
 <script lang="ts" setup>
 definePageMeta({

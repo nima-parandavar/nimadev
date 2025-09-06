@@ -27,17 +27,11 @@
         v-if="user"
         class="w-full bg-bombay-100 rounded-xl p-3 flex flex-row items-center justify-around gap-3"
       >
-        <div class="text-6xl">
-          <icon name="lucide:user" />
-        </div>
         <div>
           <p class="capitalize text-xl text-right">
             {{ user.firstName }} {{ user.lastName }}
           </p>
-          <p>{{ user.email }}</p>
-        </div>
-        <div class="text-xl">
-          <icon name="iconamoon:arrow-left-2-bold" />
+          <p class="text-sm">{{ user.email }}</p>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "64a49412-20b2-4036-951c-e928f6a6affd",
+  "id": "d88b6859-c62c-40f6-8806-fb665afc5fe5",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "articles": {
@@ -35,8 +35,8 @@
           "notNull": false,
           "autoincrement": false
         },
-        "coverImage": {
-          "name": "coverImage",
+        "cover_image": {
+          "name": "cover_image",
           "type": "text",
           "primaryKey": false,
           "notNull": false,
@@ -50,15 +50,15 @@
           "autoincrement": false,
           "default": "'draft'"
         },
-        "publishedAt": {
-          "name": "publishedAt",
+        "published_at": {
+          "name": "published_at",
           "type": "integer",
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false
         },
-        "updatedAt": {
-          "name": "updatedAt",
+        "updated_at": {
+          "name": "updated_at",
           "type": "integer",
           "primaryKey": false,
           "notNull": false,
@@ -71,22 +71,22 @@
           "notNull": false,
           "autoincrement": false
         },
-        "metaDescription": {
-          "name": "metaDescription",
+        "meta_description": {
+          "name": "meta_description",
           "type": "text",
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false
         },
-        "metaKeywords": {
-          "name": "metaKeywords",
+        "meta_key": {
+          "name": "meta_key",
           "type": "text",
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false
         },
-        "categoryId": {
-          "name": "categoryId",
+        "category_id": {
+          "name": "category_id",
           "type": "integer",
           "primaryKey": false,
           "notNull": false,
@@ -103,12 +103,12 @@
         }
       },
       "foreignKeys": {
-        "articles_categoryId_categories_id_fk": {
-          "name": "articles_categoryId_categories_id_fk",
+        "articles_category_id_categories_id_fk": {
+          "name": "articles_category_id_categories_id_fk",
           "tableFrom": "articles",
           "tableTo": "categories",
           "columnsFrom": [
-            "categoryId"
+            "category_id"
           ],
           "columnsTo": [
             "id"
@@ -170,15 +170,15 @@
           "notNull": true,
           "autoincrement": true
         },
-        "firstName": {
-          "name": "firstName",
+        "first_name": {
+          "name": "first_name",
           "type": "text(50)",
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false
         },
-        "lastName": {
-          "name": "lastName",
+        "last_name": {
+          "name": "last_name",
           "type": "text(100)",
           "primaryKey": false,
           "notNull": false,
@@ -198,8 +198,8 @@
           "notNull": true,
           "autoincrement": false
         },
-        "isActive": {
-          "name": "isActive",
+        "is_active": {
+          "name": "is_active",
           "type": "integer",
           "primaryKey": false,
           "notNull": false,
@@ -210,7 +210,8 @@
           "type": "text",
           "primaryKey": false,
           "notNull": false,
-          "autoincrement": false
+          "autoincrement": false,
+          "default": "'user'"
         }
       },
       "indexes": {

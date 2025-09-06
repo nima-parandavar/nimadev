@@ -5,6 +5,7 @@ import RadixVueResolver from "radix-vue/resolver";
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  compatibilityDate: "2025-09-06",
   modules: [
     "@nuxtjs/tailwindcss",
     "nuxt-i18n-micro",

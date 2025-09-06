@@ -1,17 +1,12 @@
-import { drizzle } from "drizzle-orm/better-sqlite3";
-import { articles } from "~/server/database/schema/article.schema";
+import { tables } from "~/server/utils/drizzle.ts";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody<any>(event);
 
-  const db = drizzle({
-    connection: { source: process.env.DB_URL },
-    schema: { articles },
-  });
-
+  const db = useDrizzle();
   try {
     const article = await db
-      .insert(articles)
+      .insert(tables.articles)
       .values({ ...body, publishedAt: new Date() });
     return article;
   } catch (error) {

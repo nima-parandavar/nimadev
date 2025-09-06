@@ -5,25 +5,27 @@ import { relations } from "drizzle-orm";
 export const articles = db.sqliteTable(
   "articles",
   {
-    id: db.integer({ mode: "number" }).primaryKey({ autoIncrement: true }),
-    title: db.text({ mode: "text", length: 150 }),
-    slug: db.text({ mode: "text", length: 150 }).notNull(),
-    content: db.text(),
-    coverImage: db.text(),
+    id: db
+      .integer("id", { mode: "number" })
+      .primaryKey({ autoIncrement: true }),
+    title: db.text("title", { mode: "text", length: 150 }),
+    slug: db.text("slug", { mode: "text", length: 150 }).notNull(),
+    content: db.text("content"),
+    coverImage: db.text("cover_image"),
 
     status: db
-      .text({ enum: ["draft", "published"] })
+      .text("status", { enum: ["draft", "published"] })
       .notNull()
       .default("draft"),
-    publishedAt: db.integer({ mode: "timestamp" }),
-    updatedAt: db.integer({ mode: "timestamp" }),
+    publishedAt: db.integer("published_at", { mode: "timestamp" }),
+    updatedAt: db.integer("updated_at", { mode: "timestamp" }),
     tags: db.text(),
 
-    metaDescription: db.text(),
-    metaKeywords: db.text(),
+    metaDescription: db.text("meta_description"),
+    metaKeywords: db.text("meta_key"),
 
     categoryId: db
-      .integer()
+      .integer("category_id")
       .references(() => categories.id, { onDelete: "set null" }),
   },
   (table) => [db.uniqueIndex("article_slug_idx").on(table.slug)]
